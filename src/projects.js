@@ -19,6 +19,6 @@ export const projects = {
         description: "Hundreds of millions of smartphones are thrown out each year. Many of these could have avoided landfill or recycling if they were repurposed. DaveWatcher is a home security app that uses machine learning to detect human and animal motion inside a home. It can be installed on any Android device with a camera. The app uses a Google Cloud machine learning library to distinguish between human and non-human motion.",
         links: ["https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
         images: [daveWatcherI1, daveWatcherI2, daveWatcherI3],
-        cations: ["The sign-in page.", "Each phone can either become a security camera, or control centre (User) that displays status information.", "Status of every camera in the user's network."]
+        captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (User) that displays status information.", "Status of every camera in the user's network."]
     }
 }

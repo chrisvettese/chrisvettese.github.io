@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import {Typography} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -12,6 +12,8 @@ import linkedinIcon from "./images/linkedin.png";
 import emailIcon from "./images/email.png";
 import AppBar from "@material-ui/core/AppBar";
 import {projects} from "./projects";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {Carousel} from 'react-responsive-carousel';
 
 const useStyles = makeStyles({
     bold: {
@@ -57,6 +59,17 @@ const useStyles = makeStyles({
     appBar: {
         top: "auto",
         bottom: "0"
+    },
+    carousel: {
+        width: "40em",
+        marginLeft: "2em"
+    },
+    projectName: {
+        fontWeight: "bold",
+        marginLeft: "2em"
+    },
+    caption: {
+        fontStyle: "italic"
     }
 });
 
@@ -76,6 +89,16 @@ const theme = createMuiTheme({
 
 export default function App() {
     const classes = useStyles();
+    const projectKeys = Object.keys(projects);
+
+    const states = [];
+    projectKeys.forEach(project => {
+        states.push(useState(projects[project].captions[0]));
+    });
+
+    function changeCaption(project, captionIndex) {
+        states[projectKeys.indexOf(project)][1](projects[project].captions[captionIndex]);
+    }
 
     return (
         <ThemeProvider theme={theme}>
@@ -89,7 +112,8 @@ export default function App() {
                         <Grid item>
                             <div className={classes.nameEducation}>
                                 <Typography variant="h3" className={classes.bold}>Chris Vettese</Typography>
-                                <Typography className={classes.standardSize}>3rd Year, BASc in Software Engineering</Typography>
+                                <Typography className={classes.standardSize}>3rd Year, BASc in Software
+                                    Engineering</Typography>
                                 <Typography className={classes.standardSize}>University of Ottawa</Typography>
                             </div>
                         </Grid>
@@ -101,13 +125,15 @@ export default function App() {
                             <a target="_blank" href="https://github.com/chrisvettese/">
                                 <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
                             </a>
-                            <a target="_blank" href="https://github.com/chrisvettese/" className={classes.standardAdjust}>GitHub</a>
+                            <a target="_blank" href="https://github.com/chrisvettese/"
+                               className={classes.standardAdjust}>GitHub</a>
                         </Grid>
                         <Grid container>
                             <a target="_blank" href="https://www.linkedin.com/in/christopher-vettese/">
                                 <img src={linkedinIcon} className={classes.icon} alt="LinkedIn Icon"/>
                             </a>
-                            <a target="_blank" href="https://www.linkedin.com/in/christopher-vettese/" className={classes.standardAdjust}>LinkedIn</a>
+                            <a target="_blank" href="https://www.linkedin.com/in/christopher-vettese/"
+                               className={classes.standardAdjust}>LinkedIn</a>
                         </Grid>
                         <Grid container>
                             <Grid item>
@@ -116,9 +142,11 @@ export default function App() {
                                 </a>
                             </Grid>
                             <Grid item className={classes.emailAdjust}>
-                                <a href="mailto:cvett018@uottawa.ca" className={classes.standardAdjust}>cvett018@uottawa.ca</a>
+                                <a href="mailto:cvett018@uottawa.ca"
+                                   className={classes.standardAdjust}>cvett018@uottawa.ca</a>
                                 <br/>
-                                <a href="mailto:chris.vettese2@gmail.com" className={classes.standardAdjust}>chris.vettese2@gmail.com</a>
+                                <a href="mailto:chris.vettese2@gmail.com"
+                                   className={classes.standardAdjust}>chris.vettese2@gmail.com</a>
                             </Grid>
                         </Grid>
                     </div>
@@ -130,21 +158,40 @@ export default function App() {
                 I'm a software engineering student at University of Ottawa.
                 I've completed 4 semesters of courses, and am currently in my 3rd co-op work term.
                 I grew up in Toronto, and have been interested in programming for many years.
-                My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks.
+                My first project was a simple Java game I made at the age of 12, and I've since developed programs in
+                Java, Python, JavaScript, and various frameworks.
                 The goal of this website is to demonstrate some of my projects.
             </Typography>
             <Divider/>
             <Typography align="center" variant="h3">Projects</Typography>
             {
-                Object.keys(projects).map(project => {
+                projectKeys.map(project => {
                     return (
                         <Fragment key={projects[project].name}>
-                            <Typography>{projects[project].name}</Typography>
+                            <Typography variant="h4"
+                                        className={classes.projectName}>{projects[project].name}</Typography>
+                            <Carousel
+                                className={classes.carousel}
+                                showThumbs={false}
+                                showStatus={false}
+                                onChange={index => changeCaption(project, index)}>
+                                {
+                                    projects[project].images.map((image, index) => {
+                                        return (
+                                            <div key={projects[project].name + index}>
+                                                <img src={image} alt={"Image of project"}/>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </Carousel>
+                            <Typography
+                                className={classes.caption}>{states[projectKeys.indexOf(project)][0]}</Typography>
                         </Fragment>
                     )
                 })
             }
-            <AppBar className={classes.appBar} color="secondary">
+            <AppBar className={classes.appBar} color="secondary" position="static">
                 <Typography align="center">Website made with React by Chris Vettese</Typography>
             </AppBar>
         </ThemeProvider>
