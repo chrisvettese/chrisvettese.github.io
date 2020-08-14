@@ -82218,11 +82218,11 @@ var projects = {
     captions: ["The home page of the app.", "Users can select from a list of suggested ingredients.", "Recipes are displayed based on the user's ingredients.", "Recipe information can be viewed in detail."]
   },
   daveWatcher: {
-    name: "Dave Watcher",
+    name: "DaveWatcher",
     description: "Hundreds of millions of smartphones are thrown out each year. Many of these could have avoided landfill or recycling if they were repurposed. DaveWatcher is a home security app that uses machine learning to detect human and animal motion inside a home. It can be installed on any Android device with a camera. The app uses a Google Cloud machine learning library to distinguish between human and non-human motion.",
     links: ["https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
     images: [_i5.default, _i6.default, _i7.default],
-    captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (User) that displays status information.", "Status of every camera in the user's network."]
+    captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (user) that displays status information.", "Status of every camera in the user's network."]
   }
 };
 exports.projects = projects;
@@ -84278,15 +84278,22 @@ var useStyles = (0, _makeStyles.default)({
     bottom: "0"
   },
   carousel: {
-    width: "40em",
-    marginLeft: "2em"
+    maxWidth: "40%",
+    left: "2em"
   },
   projectName: {
-    fontWeight: "bold",
-    marginLeft: "2em"
+    fontWeight: "bold"
   },
   caption: {
+    width: "40%",
     fontStyle: "italic"
+  },
+  alignLeft: {
+    marginLeft: "4em"
+  },
+  projectDescription: {
+    width: "50%",
+    fontSize: "1.5em"
   }
 });
 var theme = (0, _createMuiTheme.default)({
@@ -84393,19 +84400,25 @@ function App() {
   }, "chris.vettese2@gmail.com")))))), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3"
-  }, "About Me"), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+  }, "About Me"), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     className: classes.standardParagraph,
     align: "center"
   }, "I'm a software engineering student at University of Ottawa. I've completed 4 semesters of courses, and am currently in my 3rd co-op work term. I grew up in Toronto, and have been interested in programming for many years. My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks. The goal of this website is to demonstrate some of my projects."), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3"
-  }, "Projects"), projectKeys.map(function (project) {
-    return /*#__PURE__*/_react.default.createElement(_react.Fragment, {
-      key: _projects.projects[project].name
+  }, "Projects"), /*#__PURE__*/_react.default.createElement(_Divider.default, null), projectKeys.map(function (project) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: _projects.projects[project].name,
+      className: classes.alignLeft
+    }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
+      container: true
     }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
       variant: "h4",
       className: classes.projectName
-    }, _projects.projects[project].name), /*#__PURE__*/_react.default.createElement(_reactResponsiveCarousel.Carousel, {
+    }, _projects.projects[project].name)), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+      container: true,
+      justify: "space-between"
+    }, /*#__PURE__*/_react.default.createElement(_reactResponsiveCarousel.Carousel, {
       className: classes.carousel,
       showThumbs: false,
       showStatus: false,
@@ -84420,8 +84433,11 @@ function App() {
         alt: "Image of project"
       }));
     })), /*#__PURE__*/_react.default.createElement(_core.Typography, {
-      className: classes.caption
-    }, states[projectKeys.indexOf(project)][0]));
+      className: classes.projectDescription
+    }, _projects.projects[project].description)), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+      className: classes.caption,
+      align: "center"
+    }, states[projectKeys.indexOf(project)][0]), /*#__PURE__*/_react.default.createElement(_Divider.default, null));
   }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
     className: classes.appBar,
     color: "secondary",
@@ -84474,7 +84490,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61004" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
