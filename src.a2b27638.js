@@ -82163,15 +82163,70 @@ function makeStyles(stylesOrCreator) {
 
 var _default = makeStyles;
 exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","./defaultTheme":"node_modules/@material-ui/core/styles/defaultTheme.js"}],"src/profile.png":[function(require,module,exports) {
-module.exports = "/profile.6def29b2.png";
-},{}],"src/github.png":[function(require,module,exports) {
-module.exports = "/github.49311d05.png";
-},{}],"src/linkedin.png":[function(require,module,exports) {
-module.exports = "/linkedin.3f713e91.png";
-},{}],"src/email.png":[function(require,module,exports) {
-module.exports = "/email.89c0abea.png";
-},{}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","./defaultTheme":"node_modules/@material-ui/core/styles/defaultTheme.js"}],"src/images/profile.png":[function(require,module,exports) {
+module.exports = "/profile.28a18b6c.png";
+},{}],"src/images/github.png":[function(require,module,exports) {
+module.exports = "/github.c6a36f36.png";
+},{}],"src/images/linkedin.png":[function(require,module,exports) {
+module.exports = "/linkedin.f162a03e.png";
+},{}],"src/images/email.png":[function(require,module,exports) {
+module.exports = "/email.109336e9.png";
+},{}],"src/images/basil/i1.jpg":[function(require,module,exports) {
+module.exports = "/i1.7456282e.jpg";
+},{}],"src/images/basil/i2.jpg":[function(require,module,exports) {
+module.exports = "/i2.d436ffb5.jpg";
+},{}],"src/images/basil/i3.jpg":[function(require,module,exports) {
+module.exports = "/i3.15fc11a9.jpg";
+},{}],"src/images/basil/i4.jpg":[function(require,module,exports) {
+module.exports = "/i4.0f691612.jpg";
+},{}],"src/images/daveWatcher/i1.jpg":[function(require,module,exports) {
+module.exports = "/i1.4f0bcfc5.jpg";
+},{}],"src/images/daveWatcher/i2.jpg":[function(require,module,exports) {
+module.exports = "/i2.52d82e6d.jpg";
+},{}],"src/images/daveWatcher/i3.jpg":[function(require,module,exports) {
+module.exports = "/i3.41375d42.jpg";
+},{}],"src/projects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.projects = void 0;
+
+var _i = _interopRequireDefault(require("./images/basil/i1.jpg"));
+
+var _i2 = _interopRequireDefault(require("./images/basil/i2.jpg"));
+
+var _i3 = _interopRequireDefault(require("./images/basil/i3.jpg"));
+
+var _i4 = _interopRequireDefault(require("./images/basil/i4.jpg"));
+
+var _i5 = _interopRequireDefault(require("./images/daveWatcher/i1.jpg"));
+
+var _i6 = _interopRequireDefault(require("./images/daveWatcher/i2.jpg"));
+
+var _i7 = _interopRequireDefault(require("./images/daveWatcher/i3.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var projects = {
+  basil: {
+    name: "Basil",
+    description: "I collaborated on Basil for uOttaHack 2020. Basil is a web app that allows users to enter ingredients they have in their kitchen, and then matches these ingredients with recipes found across the internet. Basil then goes a step further by displaying the nutrition information for each recipe, and assigning each recipe as health rating to allow the user to determine which recipe is the healthiest.",
+    links: ["https://github.com/kareemassad/basil", "https://devpost.com/software/basil-94xomp"],
+    images: [_i.default, _i2.default, _i3.default, _i4.default],
+    captions: ["The home page of the app.", "Users can select from a list of suggested ingredients.", "Recipes are displayed based on the user's ingredients.", "Recipe information can be viewed in detail."]
+  },
+  daveWatcher: {
+    name: "Dave Watcher",
+    description: "Hundreds of millions of smartphones are thrown out each year. Many of these could have avoided landfill or recycling if they were repurposed. DaveWatcher is a home security app that uses machine learning to detect human and animal motion inside a home. It can be installed on any Android device with a camera. The app uses a Google Cloud machine learning library to distinguish between human and non-human motion.",
+    links: ["https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
+    images: [_i5.default, _i6.default, _i7.default],
+    cations: ["The sign-in page.", "Each phone can either become a security camera, or control centre (User) that displays status information.", "Status of every camera in the user's network."]
+  }
+};
+exports.projects = projects;
+},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -82179,7 +82234,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = App;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _core = require("@material-ui/core");
 
@@ -82195,15 +82250,23 @@ var _createMuiTheme = _interopRequireDefault(require("@material-ui/core/styles/c
 
 var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
 
-var _profile = _interopRequireDefault(require("./profile.png"));
+var _profile = _interopRequireDefault(require("./images/profile.png"));
 
-var _github = _interopRequireDefault(require("./github.png"));
+var _github = _interopRequireDefault(require("./images/github.png"));
 
-var _linkedin = _interopRequireDefault(require("./linkedin.png"));
+var _linkedin = _interopRequireDefault(require("./images/linkedin.png"));
 
-var _email = _interopRequireDefault(require("./email.png"));
+var _email = _interopRequireDefault(require("./images/email.png"));
+
+var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
+
+var _projects = require("./projects");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var useStyles = (0, _makeStyles.default)({
   bold: {
@@ -82245,6 +82308,10 @@ var useStyles = (0, _makeStyles.default)({
     marginLeft: "2em",
     marginRight: "2em",
     marginBottom: "1em"
+  },
+  appBar: {
+    top: "auto",
+    bottom: "0"
   }
 });
 var theme = (0, _createMuiTheme.default)({
@@ -82254,6 +82321,9 @@ var theme = (0, _createMuiTheme.default)({
   palette: {
     background: {
       default: "#E6EFF4"
+    },
+    secondary: {
+      main: "#5F747F"
     }
   }
 });
@@ -82344,9 +82414,18 @@ function App() {
   }, "I'm a software engineering student at University of Ottawa. I've completed 4 semesters of courses, and am currently in my 3rd co-op work term. I grew up in Toronto, and have been interested in programming for many years. My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks. The goal of this website is to demonstrate some of my projects."), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3"
-  }, "Projects"), "TODO");
+  }, "Projects"), Object.keys(_projects.projects).map(function (project) {
+    return /*#__PURE__*/_react.default.createElement(_react.Fragment, {
+      key: _projects.projects[project].name
+    }, /*#__PURE__*/_react.default.createElement(_core.Typography, null, _projects.projects[project].name));
+  }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
+    className: classes.appBar,
+    color: "secondary"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    align: "center"
+  }, "Website made with React by Chris Vettese")));
 }
-},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/Divider":"node_modules/@material-ui/core/esm/Divider/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./profile.png":"src/profile.png","./github.png":"src/github.png","./linkedin.png":"src/linkedin.png","./email.png":"src/email.png"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/Divider":"node_modules/@material-ui/core/esm/Divider/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/profile.png":"src/images/profile.png","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -82390,7 +82469,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57069" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58601" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
