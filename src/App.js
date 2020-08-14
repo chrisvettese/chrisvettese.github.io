@@ -61,15 +61,22 @@ const useStyles = makeStyles({
         bottom: "0"
     },
     carousel: {
-        width: "40em",
-        marginLeft: "2em"
+        maxWidth: "40%",
+        left: "2em"
     },
     projectName: {
         fontWeight: "bold",
-        marginLeft: "2em"
     },
     caption: {
+        width: "40%",
         fontStyle: "italic"
+    },
+    alignLeft: {
+        marginLeft: "4em"
+    },
+    projectDescription: {
+        width: "50%",
+        fontSize: "1.5em"
     }
 });
 
@@ -154,6 +161,7 @@ export default function App() {
             </Grid>
             <Divider/>
             <Typography align="center" variant="h3">About Me</Typography>
+            <Divider/>
             <Typography className={classes.standardParagraph} align="center">
                 I'm a software engineering student at University of Ottawa.
                 I've completed 4 semesters of courses, and am currently in my 3rd co-op work term.
@@ -164,30 +172,37 @@ export default function App() {
             </Typography>
             <Divider/>
             <Typography align="center" variant="h3">Projects</Typography>
+            <Divider/>
             {
                 projectKeys.map(project => {
                     return (
-                        <Fragment key={projects[project].name}>
-                            <Typography variant="h4"
-                                        className={classes.projectName}>{projects[project].name}</Typography>
-                            <Carousel
-                                className={classes.carousel}
-                                showThumbs={false}
-                                showStatus={false}
-                                onChange={index => changeCaption(project, index)}>
-                                {
-                                    projects[project].images.map((image, index) => {
-                                        return (
-                                            <div key={projects[project].name + index}>
-                                                <img src={image} alt={"Image of project"}/>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </Carousel>
-                            <Typography
-                                className={classes.caption}>{states[projectKeys.indexOf(project)][0]}</Typography>
-                        </Fragment>
+                        <div key={projects[project].name} className={classes.alignLeft}>
+                            <Grid container>
+                                <Typography variant="h4"
+                                            className={classes.projectName}>{projects[project].name}</Typography>
+                            </Grid>
+                            <Grid container justify="space-between">
+                                <Carousel
+                                    className={classes.carousel}
+                                    showThumbs={false}
+                                    showStatus={false}
+                                    onChange={index => changeCaption(project, index)}>
+                                    {
+                                        projects[project].images.map((image, index) => {
+                                            return (
+                                                <div key={projects[project].name + index}>
+                                                    <img src={image} alt={"Image of project"}/>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </Carousel>
+                                <Typography className={classes.projectDescription}>{projects[project].description}</Typography>
+                            </Grid>
+                            <Typography className={classes.caption}
+                                        align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
+                            <Divider/>
+                        </div>
                     )
                 })
             }
