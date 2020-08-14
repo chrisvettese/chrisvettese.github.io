@@ -84287,14 +84287,14 @@ var useStyles = (0, _makeStyles.default)({
     left: "2em"
   },
   carouselNarrow: {
-    width: "30em",
+    width: "70%",
     left: "2em"
   },
   carouselImageWide: {
     height: "100%"
   },
   carouselImageNarrow: {
-    height: "65em"
+    height: "100%"
   },
   projectName: {
     fontWeight: "bold",
@@ -84316,8 +84316,7 @@ var useStyles = (0, _makeStyles.default)({
     marginLeft: "2em"
   },
   projectSources: {
-    marginTop: "-2em",
-    marginLeft: "3em"
+    marginLeft: "-20em"
   }
 });
 var theme = (0, _createMuiTheme.default)({
@@ -84472,7 +84471,23 @@ function App() {
     }, _projects.projects[project].name)), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    })), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
+      container: true,
+      className: classes.projectSources
+    }, /*#__PURE__*/_react.default.createElement("a", {
+      target: "_blank",
+      href: _projects.projects[project].links[0]
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      src: _github.default,
+      className: classes.icon,
+      alt: "GitHub Icon"
+    })), /*#__PURE__*/_react.default.createElement("a", {
+      target: "_blank",
+      href: _projects.projects[project].links[0],
+      className: classes.standardAdjust
+    }, "GitHub"), /*#__PURE__*/_react.default.createElement(DevpostLink, {
+      project: project
+    })))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       item: true,
       xs: 12,
@@ -84512,24 +84527,8 @@ function App() {
       align: "center"
     }, states[projectKeys.indexOf(project)][0])), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
-      xs: 4,
-      className: classes.projectSources
-    }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
-      container: true
-    }, /*#__PURE__*/_react.default.createElement("a", {
-      target: "_blank",
-      href: _projects.projects[project].links[0]
-    }, /*#__PURE__*/_react.default.createElement("img", {
-      src: _github.default,
-      className: classes.icon,
-      alt: "GitHub Icon"
-    })), /*#__PURE__*/_react.default.createElement("a", {
-      target: "_blank",
-      href: _projects.projects[project].links[0],
-      className: classes.standardAdjust
-    }, "GitHub"), /*#__PURE__*/_react.default.createElement(DevpostLink, {
-      project: project
-    }))))), /*#__PURE__*/_react.default.createElement(_Divider.default, null));
+      xs: 4
+    }))), /*#__PURE__*/_react.default.createElement(_Divider.default, null));
   }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
     className: classes.appBar,
     color: "secondary",
@@ -84582,7 +84581,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63174" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
