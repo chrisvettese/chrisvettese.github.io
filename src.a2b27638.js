@@ -84190,31 +84190,19 @@ var _Carousel = _interopRequireDefault(require("./components/Carousel"));
 var _Thumbs = _interopRequireDefault(require("./components/Thumbs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./components/Carousel":"node_modules/react-responsive-carousel/lib/es/components/Carousel.js","./components/Thumbs":"node_modules/react-responsive-carousel/lib/es/components/Thumbs.js"}],"src/App.js":[function(require,module,exports) {
+},{"./components/Carousel":"node_modules/react-responsive-carousel/lib/es/components/Carousel.js","./components/Thumbs":"node_modules/react-responsive-carousel/lib/es/components/Thumbs.js"}],"src/Profile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = App;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _core = require("@material-ui/core");
-
-var _Divider = _interopRequireDefault(require("@material-ui/core/Divider"));
-
-var _makeStyles = _interopRequireDefault(require("@material-ui/core/styles/makeStyles"));
+exports.default = Profile;
 
 var _Grid = _interopRequireDefault(require("@material-ui/core/Grid"));
 
-var _styles = require("@material-ui/styles");
-
-var _createMuiTheme = _interopRequireDefault(require("@material-ui/core/styles/createMuiTheme"));
-
-var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
-
 var _profile = _interopRequireDefault(require("./images/profile.png"));
+
+var _core = require("@material-ui/core");
 
 var _github = _interopRequireDefault(require("./images/github.png"));
 
@@ -84222,153 +84210,56 @@ var _linkedin = _interopRequireDefault(require("./images/linkedin.png"));
 
 var _email = _interopRequireDefault(require("./images/email.png"));
 
-var _devpost = _interopRequireDefault(require("./images/devpost.png"));
+var _styles = require("@material-ui/styles");
 
-var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
+var _react = _interopRequireDefault(require("react"));
 
-var _projects = require("./projects");
-
-require("react-responsive-carousel/lib/styles/carousel.min.css");
-
-var _reactResponsiveCarousel = require("react-responsive-carousel");
+var _makeStyles = _interopRequireDefault(require("@material-ui/core/styles/makeStyles"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var useStyles = (0, _makeStyles.default)({
-  bold: {
-    fontWeight: "bold"
-  },
-  profile: {
-    marginLeft: "2em",
-    marginTop: "3em",
-    maxWidth: "auto",
-    maxHeight: "15em",
-    marginBottom: "2em"
-  },
-  nameEducation: {
-    marginTop: "7em",
-    marginLeft: "2em"
-  },
-  standardSize: {
-    fontSize: "1.5em"
-  },
-  icon: {
-    width: "auto",
-    height: "2.5em",
-    marginRight: "0.5em",
-    marginTop: "1em"
-  },
-  standardAdjust: {
-    fontSize: "1.5em",
-    marginTop: "0.7em"
-  },
-  socialMedia: {
-    marginTop: "5em",
-    marginRight: "2em"
-  },
-  emailAdjust: {
-    marginTop: "1em"
-  },
-  standardParagraph: {
-    fontSize: "1.5em",
-    marginLeft: "2em",
-    marginRight: "2em",
-    marginBottom: "1em"
-  },
-  appBar: {
-    top: "auto",
-    bottom: "0"
-  },
-  carouselWide: {
-    left: "2em"
-  },
-  carouselNarrow: {
-    width: "70%",
-    left: "2em"
-  },
-  carouselImageWide: {
-    height: "100%"
-  },
-  carouselImageNarrow: {
-    height: "100%"
-  },
-  projectName: {
-    fontWeight: "bold",
-    marginTop: "0.5em"
-  },
-  captionWide: {
-    fontStyle: "italic"
-  },
-  captionNarrow: {
-    width: "70%",
-    fontStyle: "italic"
-  },
-  alignLeft: {
-    marginLeft: "4em"
-  },
-  projectDescription: {
-    fontSize: "1.5em",
-    width: "170%",
-    marginLeft: "2em"
-  },
-  projectSources: {
-    marginLeft: "2em"
-  }
-});
-var theme = (0, _createMuiTheme.default)({
-  typography: {
-    fontFamily: "\"Helvetica\", \"Arial\", sans-serif"
-  },
-  palette: {
-    background: {
-      default: "#E6EFF4"
+var useStyles = (0, _makeStyles.default)(function () {
+  return {
+    profile: {
+      marginLeft: "2em",
+      marginTop: "3em",
+      maxWidth: "auto",
+      maxHeight: "15em",
+      marginBottom: "2em"
     },
-    secondary: {
-      main: "#5F747F"
+    bold: {
+      fontWeight: "bold"
+    },
+    nameEducation: {
+      marginTop: "7em",
+      marginLeft: "2em"
+    },
+    standardSize: {
+      fontSize: "1.5em"
+    },
+    icon: {
+      width: "auto",
+      height: "2.5em",
+      marginRight: "0.5em",
+      marginTop: "1em"
+    },
+    standardAdjust: {
+      fontSize: "1.5em",
+      marginTop: "0.7em"
+    },
+    socialMedia: {
+      marginTop: "5em",
+      marginRight: "2em"
+    },
+    emailAdjust: {
+      marginTop: "1em"
     }
-  }
+  };
 });
 
-function App() {
+function Profile() {
   var classes = useStyles();
-  var projectKeys = Object.keys(_projects.projects);
-  var states = [];
-  projectKeys.forEach(function (project) {
-    states.push((0, _react.useState)(_projects.projects[project].captions[0]));
-  });
-
-  function changeCaption(project, captionIndex) {
-    states[projectKeys.indexOf(project)][1](_projects.projects[project].captions[captionIndex]);
-  }
-
-  function DevpostLink(_ref) {
-    var project = _ref.project;
-
-    if (_projects.projects[project].links.length > 1) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[1]
-      }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _devpost.default,
-        className: classes.icon,
-        alt: "Devpost Icon"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[1],
-        className: classes.standardAdjust
-      }, "Devpost"));
-    }
-
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
-  }
-
-  return /*#__PURE__*/_react.default.createElement(_styles.ThemeProvider, {
-    theme: theme
-  }, /*#__PURE__*/_react.default.createElement(_CssBaseline.default, null), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+  return /*#__PURE__*/_react.default.createElement(_Grid.default, {
     container: true,
     justify: "space-between"
   }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
@@ -84441,19 +84332,195 @@ function App() {
   }, "cvett018@uottawa.ca"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
     href: "mailto:chris.vettese2@gmail.com",
     className: classes.standardAdjust
-  }, "chris.vettese2@gmail.com")))))), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+  }, "chris.vettese2@gmail.com"))))));
+}
+},{"@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","./images/profile.png":"src/images/profile.png","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","react":"node_modules/react/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js"}],"src/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = App;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _core = require("@material-ui/core");
+
+var _Divider = _interopRequireDefault(require("@material-ui/core/Divider"));
+
+var _makeStyles = _interopRequireDefault(require("@material-ui/core/styles/makeStyles"));
+
+var _Grid = _interopRequireDefault(require("@material-ui/core/Grid"));
+
+var _styles = require("@material-ui/styles");
+
+var _createMuiTheme = _interopRequireDefault(require("@material-ui/core/styles/createMuiTheme"));
+
+var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
+
+var _profile = _interopRequireDefault(require("./images/profile.png"));
+
+var _github = _interopRequireDefault(require("./images/github.png"));
+
+var _linkedin = _interopRequireDefault(require("./images/linkedin.png"));
+
+var _email = _interopRequireDefault(require("./images/email.png"));
+
+var _devpost = _interopRequireDefault(require("./images/devpost.png"));
+
+var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
+
+var _projects = require("./projects");
+
+require("react-responsive-carousel/lib/styles/carousel.min.css");
+
+var _reactResponsiveCarousel = require("react-responsive-carousel");
+
+var _Profile = _interopRequireDefault(require("./Profile"));
+
+var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var useStyles = (0, _makeStyles.default)(function () {
+  return {
+    icon: {
+      width: "auto",
+      height: "2.5em",
+      marginRight: "0.5em",
+      marginTop: "1em"
+    },
+    standardParagraph: {
+      fontSize: "1.5em",
+      marginLeft: "2em",
+      marginRight: "2em",
+      marginBottom: "1em"
+    },
+    standardAdjust: {
+      fontSize: "1.5em",
+      marginTop: "0.7em"
+    },
+    appBar: {
+      top: "auto",
+      bottom: "0"
+    },
+    carouselWide: {
+      left: "2em"
+    },
+    carouselNarrow: {
+      width: "70%",
+      left: "2em"
+    },
+    carouselImageWide: {
+      height: "100%"
+    },
+    carouselImageNarrow: {
+      height: "100%"
+    },
+    projectName: {
+      fontWeight: "bold",
+      marginTop: "0.5em"
+    },
+    captionWide: {
+      fontStyle: "italic"
+    },
+    captionNarrow: {
+      width: "70%",
+      fontStyle: "italic"
+    },
+    projectDescription: {
+      fontSize: "1.5em",
+      width: "170%",
+      marginLeft: "2em"
+    },
+    projectSources: {
+      marginLeft: "2em",
+      marginTop: "0.1em"
+    },
+    projectBox: {
+      marginLeft: "4em",
+      marginRight: "4em",
+      borderRadius: "25px",
+      background: "#A9D7D8",
+      padding: "20px",
+      marginTop: "2em",
+      marginBottom: "2em"
+    }
+  };
+});
+var theme = (0, _createMuiTheme.default)({
+  typography: {
+    fontFamily: "\"Helvetica\", \"Arial\", sans-serif"
+  },
+  palette: {
+    background: {
+      default: "#E6EFF4"
+    },
+    primary: {
+      main: "#D5E8F2"
+    },
+    secondary: {
+      main: "#5F747F"
+    }
+  }
+});
+
+function App() {
+  var classes = useStyles();
+  var projectKeys = Object.keys(_projects.projects);
+  var states = [];
+  projectKeys.forEach(function (project) {
+    states.push((0, _react.useState)(_projects.projects[project].captions[0]));
+  });
+
+  function changeCaption(project, captionIndex) {
+    states[projectKeys.indexOf(project)][1](_projects.projects[project].captions[captionIndex]);
+  }
+
+  function DevpostLink(_ref) {
+    var project = _ref.project;
+
+    if (_projects.projects[project].links.length > 1) {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: _projects.projects[project].links[1]
+      }, /*#__PURE__*/_react.default.createElement("img", {
+        src: _devpost.default,
+        className: classes.icon,
+        alt: "Devpost Icon"
+      })), /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: _projects.projects[project].links[1],
+        className: classes.standardAdjust
+      }, "Devpost"));
+    }
+
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_styles.ThemeProvider, {
+    theme: theme
+  }, /*#__PURE__*/_react.default.createElement(_CssBaseline.default, null), /*#__PURE__*/_react.default.createElement(_Profile.default, null), /*#__PURE__*/_react.default.createElement(_Box.default, {
+    bgcolor: "primary.main"
+  }, /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3"
-  }, "About Me"), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+  }, "About Me"), /*#__PURE__*/_react.default.createElement(_Divider.default, null)), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     className: classes.standardParagraph,
     align: "center"
-  }, "I'm a software engineering student at University of Ottawa. I've completed 4 semesters of courses, and am currently in my 3rd co-op work term. I grew up in Toronto, and have been interested in programming for many years. My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks. The goal of this website is to demonstrate some of my projects."), /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+  }, "I'm a software engineering student at University of Ottawa. I've completed 4 semesters of courses, and am currently in my 3rd co-op work term. I grew up in Toronto, and have been interested in programming for many years. My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks. The goal of this website is to demonstrate some of my projects."), /*#__PURE__*/_react.default.createElement(_Box.default, {
+    bgcolor: "primary.main"
+  }, /*#__PURE__*/_react.default.createElement(_Divider.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3"
-  }, "Projects"), /*#__PURE__*/_react.default.createElement(_Divider.default, null), projectKeys.map(function (project) {
+  }, "Projects"), /*#__PURE__*/_react.default.createElement(_Divider.default, null)), projectKeys.map(function (project) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: _projects.projects[project].name,
-      className: classes.alignLeft
+      className: classes.projectBox
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       spacing: 1
@@ -84528,7 +84595,7 @@ function App() {
     }, states[projectKeys.indexOf(project)][0])), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    }))), /*#__PURE__*/_react.default.createElement(_Divider.default, null));
+    }))));
   }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
     className: classes.appBar,
     color: "secondary",
@@ -84537,7 +84604,7 @@ function App() {
     align: "center"
   }, "Website made with React by Chris Vettese")));
 }
-},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/Divider":"node_modules/@material-ui/core/esm/Divider/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/profile.png":"src/images/profile.png","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","./images/devpost.png":"src/images/devpost.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/Divider":"node_modules/@material-ui/core/esm/Divider/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/profile.png":"src/images/profile.png","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","./images/devpost.png":"src/images/devpost.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js","@material-ui/core/Box":"node_modules/@material-ui/core/esm/Box/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -84581,7 +84648,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63174" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63243" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
