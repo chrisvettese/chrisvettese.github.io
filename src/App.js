@@ -65,7 +65,7 @@ const useStyles = makeStyles({
         left: "2em"
     },
     carouselNarrow: {
-        width: "70%",
+        width: "30em",
         left: "2em"
     },
     carouselImageWide: {
