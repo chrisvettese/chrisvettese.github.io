@@ -84287,7 +84287,7 @@ var useStyles = (0, _makeStyles.default)({
     left: "2em"
   },
   carouselNarrow: {
-    width: "70%",
+    width: "30em",
     left: "2em"
   },
   carouselImageWide: {
