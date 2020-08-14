@@ -65,14 +65,14 @@ const useStyles = makeStyles({
         left: "2em"
     },
     carouselNarrow: {
-        width: "30em",
+        width: "70%",
         left: "2em"
     },
     carouselImageWide: {
         height: "100%"
     },
     carouselImageNarrow: {
-        height: "65em",
+        height: "100%",
     },
     projectName: {
         fontWeight: "bold",
@@ -94,8 +94,7 @@ const useStyles = makeStyles({
         marginLeft: "2em"
     },
     projectSources: {
-        marginTop: "-2em",
-        marginLeft: "3em"
+        marginLeft: "2em"
     }
 });
 
@@ -219,7 +218,14 @@ export default function App() {
                                                     className={classes.projectName}>{projects[project].name}</Typography>
                                     </Grid>
                                     <Grid item xs={4}>
-
+                                        <Grid container className={classes.projectSources}>
+                                            <a target="_blank" href={projects[project].links[0]}>
+                                                <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
+                                            </a>
+                                            <a target="_blank" href={projects[project].links[0]}
+                                               className={classes.standardAdjust}>GitHub</a>
+                                            <DevpostLink project={project}/>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                                 <Grid container item xs={12} spacing={3}>
@@ -251,15 +257,8 @@ export default function App() {
                                             className={projects[project].wideImage ? classes.captionWide : classes.captionNarrow}
                                             align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
                                     </Grid>
-                                    <Grid item xs={4} className={classes.projectSources}>
-                                        <Grid container>
-                                            <a target="_blank" href={projects[project].links[0]}>
-                                                <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
-                                            </a>
-                                            <a target="_blank" href={projects[project].links[0]}
-                                               className={classes.standardAdjust}>GitHub</a>
-                                            <DevpostLink project={project}/>
-                                        </Grid>
+                                    <Grid item xs={4}>
+
                                     </Grid>
                                 </Grid>
                             </Grid>
