@@ -10,6 +10,7 @@ import profileImage from "./images/profile.png";
 import githubIcon from "./images/github.png";
 import linkedinIcon from "./images/linkedin.png";
 import emailIcon from "./images/email.png";
+import devpostIcon from "./images/devpost.png";
 import AppBar from "@material-ui/core/AppBar";
 import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -60,23 +61,41 @@ const useStyles = makeStyles({
         top: "auto",
         bottom: "0"
     },
-    carousel: {
-        maxWidth: "40%",
+    carouselWide: {
         left: "2em"
+    },
+    carouselNarrow: {
+        width: "70%",
+        left: "2em"
+    },
+    carouselImageWide: {
+        height: "100%"
+    },
+    carouselImageNarrow: {
+        height: "65em",
     },
     projectName: {
         fontWeight: "bold",
+        marginTop: "0.5em"
     },
-    caption: {
-        width: "40%",
+    captionWide: {
+        fontStyle: "italic"
+    },
+    captionNarrow: {
+        width: "70%",
         fontStyle: "italic"
     },
     alignLeft: {
         marginLeft: "4em"
     },
     projectDescription: {
-        width: "50%",
-        fontSize: "1.5em"
+        fontSize: "1.5em",
+        width: "170%",
+        marginLeft: "2em"
+    },
+    projectSources: {
+        marginTop: "-2em",
+        marginLeft: "3em"
     }
 });
 
@@ -105,6 +124,22 @@ export default function App() {
 
     function changeCaption(project, captionIndex) {
         states[projectKeys.indexOf(project)][1](projects[project].captions[captionIndex]);
+    }
+
+    function DevpostLink({project}) {
+        if (projects[project].links.length > 1) {
+            return (
+                <>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a target="_blank" href={projects[project].links[1]}>
+                        <img src={devpostIcon} className={classes.icon} alt="Devpost Icon"/>
+                    </a>
+                    <a target="_blank" href={projects[project].links[1]}
+                       className={classes.standardAdjust}>Devpost</a>
+                </>
+            )
+        }
+        return <></>
     }
 
     return (
@@ -177,30 +212,57 @@ export default function App() {
                 projectKeys.map(project => {
                     return (
                         <div key={projects[project].name} className={classes.alignLeft}>
-                            <Grid container>
-                                <Typography variant="h4"
-                                            className={classes.projectName}>{projects[project].name}</Typography>
+                            <Grid container spacing={1}>
+                                <Grid container item xs={12} spacing={3}>
+                                    <Grid item xs={4}>
+                                        <Typography variant="h4"
+                                                    className={classes.projectName}>{projects[project].name}</Typography>
+                                    </Grid>
+                                    <Grid item xs={4}>
+
+                                    </Grid>
+                                </Grid>
+                                <Grid container item xs={12} spacing={3}>
+                                    <Grid item xs={4}>
+                                        <Carousel
+                                            className={projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow}
+                                            showThumbs={false}
+                                            showStatus={false}
+                                            onChange={index => changeCaption(project, index)}>
+                                            {
+                                                projects[project].images.map((image, index) => {
+                                                    return <img
+                                                        className={projects[project].wideImage ? classes.carouselImageWide : classes.carouselImageNarrow}
+                                                        key={projects[project].name + index}
+                                                        src={image}
+                                                        alt={"Image of project"}/>
+                                                })
+                                            }
+                                        </Carousel>
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <Typography
+                                            className={classes.projectDescription}>{projects[project].description}</Typography>
+                                    </Grid>
+                                </Grid>
+                                <Grid container item xs={12} spacing={3}>
+                                    <Grid item xs={4}>
+                                        <Typography
+                                            className={projects[project].wideImage ? classes.captionWide : classes.captionNarrow}
+                                            align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
+                                    </Grid>
+                                    <Grid item xs={4} className={classes.projectSources}>
+                                        <Grid container>
+                                            <a target="_blank" href={projects[project].links[0]}>
+                                                <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
+                                            </a>
+                                            <a target="_blank" href={projects[project].links[0]}
+                                               className={classes.standardAdjust}>GitHub</a>
+                                            <DevpostLink project={project}/>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
                             </Grid>
-                            <Grid container justify="space-between">
-                                <Carousel
-                                    className={classes.carousel}
-                                    showThumbs={false}
-                                    showStatus={false}
-                                    onChange={index => changeCaption(project, index)}>
-                                    {
-                                        projects[project].images.map((image, index) => {
-                                            return (
-                                                <div key={projects[project].name + index}>
-                                                    <img src={image} alt={"Image of project"}/>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </Carousel>
-                                <Typography className={classes.projectDescription}>{projects[project].description}</Typography>
-                            </Grid>
-                            <Typography className={classes.caption}
-                                        align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
                             <Divider/>
                         </div>
                     )
