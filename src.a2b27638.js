@@ -82227,7 +82227,7 @@ var projects = {
   basil: {
     name: "Basil",
     description: "I collaborated on Basil for uOttaHack 2020. Basil is a web app that allows users to enter ingredients they have in their kitchen, and then matches these ingredients with recipes found across the internet. Basil then goes a step further by displaying the nutrition information for each recipe, and assigning each recipe as health rating to allow the user to determine which recipe is the healthiest.",
-    links: ["https://github.com/kareemassad/basil", "https://devpost.com/software/basil-94xomp", ""],
+    links: ["", "https://github.com/kareemassad/basil", "https://devpost.com/software/basil-94xomp"],
     images: [_i.default, _i2.default, _i3.default, _i4.default],
     captions: ["The home page of the app.", "Users can select from a list of suggested ingredients.", "Recipes are displayed based on the user's ingredients.", "Recipe information can be viewed in detail."],
     wideImage: true
@@ -82235,7 +82235,7 @@ var projects = {
   daveWatcher: {
     name: "DaveWatcher",
     description: "Hundreds of millions of smartphones are thrown out each year. Many of these could have avoided landfill or recycling if they were repurposed. DaveWatcher is a home security app that uses machine learning to detect human and animal motion inside a home. It can be installed on any Android device with a camera. The app uses a Google Cloud machine learning library to distinguish between human and non-human motion.",
-    links: ["https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher", ""],
+    links: ["", "https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
     images: [_i5.default, _i6.default, _i7.default],
     captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (user) that displays status information.", "Status of every camera in the user's network."],
     wideImage: false
@@ -82243,7 +82243,7 @@ var projects = {
   bakeFromHome: {
     name: "Bake From Home",
     description: "This is a React website made for a user interface design course. It demonstrates the ability to search for baking recipes in various ways. Plugins used include Material UI and React Router.",
-    links: ["https://github.com/chrisvettese/seg3125-react-lab", "", "https://chrisvettese.github.io/seg3125-react-lab/"],
+    links: ["https://chrisvettese.github.io/seg3125-react-lab/", "https://github.com/chrisvettese/seg3125-react-lab", ""],
     images: [_i8.default, _i9.default, _i10.default, _i11.default],
     captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
     wideImage: true
@@ -84516,17 +84516,17 @@ function App() {
   function DevpostLink(_ref) {
     var project = _ref.project;
 
-    if (_projects.projects[project].links[1].length > 0) {
+    if (_projects.projects[project].links[2].length > 0) {
       return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
-        href: _projects.projects[project].links[1]
+        href: _projects.projects[project].links[2]
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: _devpost.default,
         className: classes.icon,
         alt: "Devpost Icon"
       })), /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
-        href: _projects.projects[project].links[1],
+        href: _projects.projects[project].links[2],
         className: classes.standardAdjust
       }, "Devpost"));
     }
@@ -84537,19 +84537,19 @@ function App() {
   function DemoLink(_ref2) {
     var project = _ref2.project;
 
-    if (_projects.projects[project].links[2].length > 0) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
+    if (_projects.projects[project].links[0].length > 0) {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
-        href: _projects.projects[project].links[2]
+        href: _projects.projects[project].links[0]
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: _demo.default,
         className: classes.icon,
         alt: "Demo"
       })), /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
-        href: _projects.projects[project].links[2],
+        href: _projects.projects[project].links[0],
         className: classes.standardAdjust
-      }, "Demo Project"));
+      }, "Demo Project"), "\xA0\xA0\xA0\xA0");
     }
 
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
@@ -84596,7 +84596,9 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       className: classes.projectSources
-    }, /*#__PURE__*/_react.default.createElement("a", {
+    }, /*#__PURE__*/_react.default.createElement(DemoLink, {
+      project: project
+    }), /*#__PURE__*/_react.default.createElement("a", {
       target: "_blank",
       href: _projects.projects[project].links[0]
     }, /*#__PURE__*/_react.default.createElement("img", {
@@ -84608,8 +84610,6 @@ function App() {
       href: _projects.projects[project].links[0],
       className: classes.standardAdjust
     }, "GitHub"), /*#__PURE__*/_react.default.createElement(DevpostLink, {
-      project: project
-    }), /*#__PURE__*/_react.default.createElement(DemoLink, {
       project: project
     })))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
@@ -84705,7 +84705,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63243" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55056" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
