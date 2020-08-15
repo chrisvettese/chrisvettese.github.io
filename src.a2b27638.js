@@ -84461,7 +84461,7 @@ var useStyles = (0, _makeStyles.default)(function () {
     projectSources: {
       marginLeft: "2em",
       marginTop: "-1em",
-      width: "150%%"
+      width: "150%"
     },
     projectBox: {
       marginLeft: "4em",
@@ -84701,7 +84701,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55176" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56237" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
