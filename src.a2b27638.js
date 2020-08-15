@@ -84611,12 +84611,12 @@ function App() {
         src: image,
         alt: "Image of project"
       });
-    }))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    }))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+      className: classes.projectDescription
+    }, _projects.projects[project].description), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
-      className: classes.projectDescription
-    }, _projects.projects[project].description))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    })), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       item: true,
       xs: 12,
