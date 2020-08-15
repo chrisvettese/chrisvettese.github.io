@@ -9,18 +9,24 @@ import bakeFromHomeI1 from "./images/bakeFromHome/i1.PNG";
 import bakeFromHomeI2 from "./images/bakeFromHome/i2.PNG";
 import bakeFromHomeI3 from "./images/bakeFromHome/i3.PNG";
 import bakeFromHomeI4 from "./images/bakeFromHome/i4.PNG";
+import fortressAllianceI1 from "./images/fortressAlliance/i1.png";
+import fortressAllianceI2 from "./images/fortressAlliance/i2.png";
+import fortressAllianceI3 from "./images/fortressAlliance/i3.png";
+import fortressAllianceI4 from "./images/fortressAlliance/i4.png";
+import fortressAllianceI5 from "./images/fortressAlliance/i5.png";
 
 import javaIcon from "./images/java.png";
 import javascriptIcon from "./images/javascript.png";
 import reactIcon from "./images/react.png";
 import androidIcon from "./images/android.png";
 import firebaseIcon from "./images/firebase.png";
+import libgdxIcon from "./images/libgdx.png";
 
 import githubIcon from "./images/github.png";
 import devpostIcon from "./images/devpost.png";
 import demoIcon from "./images/demo.png";
 
-const languages = [[javaIcon, "Java"], [javascriptIcon, "JavaScript"], [reactIcon, "React"], [androidIcon, "Android"], [firebaseIcon, "Firebase"]];
+const languages = [[javaIcon, "Java"], [javascriptIcon, "JavaScript"], [reactIcon, "React"], [androidIcon, "Android"], [firebaseIcon, "Firebase"], [libgdxIcon, "libGDX"]];
 const websites = [[demoIcon, "Demo Project"], [githubIcon, "GitHub"], [devpostIcon, "Devpost"]];
 
 export const projects = {
@@ -50,5 +56,14 @@ export const projects = {
         captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
         wideImage: true,
         languages: [languages[1], languages[2]]
+    },
+    fortressAlliance: {
+        name: "Fortress Alliance",
+        description: "Fortress Alliance is a 2D multiplayer platform game written in Java with libGDX. The game consists of two teams that fight each other and aim to get the most kills before the timer runs out. It has a server, which hosts the game, a map maker program, which can be used to design levels, and a client that is used to play the game. Fortress Alliance demonstrates the use of object-oriented programming, efficient collision detection algorithms, and multithreading in Java.",
+        links: [[websites[0], "https://github.com/chrisvettese/FortressAlliance#Setup"], [websites[1], "https://github.com/chrisvettese/FortressAlliance"]],
+        images: [fortressAllianceI1, fortressAllianceI2, fortressAllianceI3, fortressAllianceI4, fortressAllianceI5],
+        captions: ["A scene in the example map.", "The waiting screen.", "A fight between two players.", "When a player dies.", "Editing the map with the map maker."],
+        wideImage: true,
+        languages: [languages[0], languages[5]]
     }
 }
