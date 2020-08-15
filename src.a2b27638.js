@@ -84460,7 +84460,8 @@ var useStyles = (0, _makeStyles.default)(function () {
     },
     projectSources: {
       marginLeft: "2em",
-      marginTop: "-1em"
+      marginTop: "-1em",
+      width: "150%%"
     },
     projectBox: {
       marginLeft: "4em",
@@ -84478,7 +84479,7 @@ var useStyles = (0, _makeStyles.default)(function () {
       margin: "1em 0 1em 0"
     },
     dividerSpan: {
-      background: "#E6EFF4",
+      background: "#FFFFFF",
       padding: "0 10px"
     }
   };
@@ -84489,7 +84490,7 @@ var theme = (0, _createMuiTheme.default)({
   },
   palette: {
     background: {
-      default: "#E6EFF4"
+      default: "#FFFFFF"
     },
     secondary: {
       main: "#5F747F"
@@ -84560,8 +84561,7 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: classes.dividerSpan
   }, "About Me")), /*#__PURE__*/_react.default.createElement(_core.Typography, {
-    className: classes.standardParagraph,
-    align: "center"
+    className: classes.standardParagraph
   }, "I'm a software engineering student at University of Ottawa. I've completed 4 semesters of courses, and am currently in my 3rd co-op work term. I grew up in Toronto, and have been interested in programming for many years. My first project was a simple Java game I made at the age of 12, and I've since developed programs in Java, Python, JavaScript, and various frameworks. The goal of this website is to demonstrate some of my projects."), /*#__PURE__*/_react.default.createElement(_core.Typography, {
     align: "center",
     variant: "h3",
