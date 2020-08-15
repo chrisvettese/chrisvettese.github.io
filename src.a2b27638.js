@@ -82191,6 +82191,14 @@ module.exports = "/i2.a749c0c1.PNG";
 module.exports = "/i3.4cb7f553.PNG";
 },{}],"src/images/bakeFromHome/i4.PNG":[function(require,module,exports) {
 module.exports = "/i4.0ecc3d84.PNG";
+},{}],"src/images/java.png":[function(require,module,exports) {
+module.exports = "/java.ed20722d.png";
+},{}],"src/images/javascript.png":[function(require,module,exports) {
+module.exports = "/javascript.40174736.png";
+},{}],"src/images/react.png":[function(require,module,exports) {
+module.exports = "/react.9bc4a15d.png";
+},{}],"src/images/android.png":[function(require,module,exports) {
+module.exports = "/android.aef6b203.png";
 },{}],"src/projects.js":[function(require,module,exports) {
 "use strict";
 
@@ -82221,7 +82229,17 @@ var _i10 = _interopRequireDefault(require("./images/bakeFromHome/i3.PNG"));
 
 var _i11 = _interopRequireDefault(require("./images/bakeFromHome/i4.PNG"));
 
+var _java = _interopRequireDefault(require("./images/java.png"));
+
+var _javascript = _interopRequireDefault(require("./images/javascript.png"));
+
+var _react = _interopRequireDefault(require("./images/react.png"));
+
+var _android = _interopRequireDefault(require("./images/android.png"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var languages = [[_java.default, "Java"], [_javascript.default, "JavaScript"], [_react.default, "React"], [_android.default, "Android"]]; //format for links: ["", "", ""] -> [app demo link, github link, devpost link]. empty quotes when app doesn't have a link
 
 var projects = {
   basil: {
@@ -82230,7 +82248,8 @@ var projects = {
     links: ["", "https://github.com/kareemassad/basil", "https://devpost.com/software/basil-94xomp"],
     images: [_i.default, _i2.default, _i3.default, _i4.default],
     captions: ["The home page of the app.", "Users can select from a list of suggested ingredients.", "Recipes are displayed based on the user's ingredients.", "Recipe information can be viewed in detail."],
-    wideImage: true
+    wideImage: true,
+    languages: [languages[1], languages[2]]
   },
   daveWatcher: {
     name: "DaveWatcher",
@@ -82238,7 +82257,8 @@ var projects = {
     links: ["", "https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
     images: [_i5.default, _i6.default, _i7.default],
     captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (user) that displays status information.", "Status of every camera in the user's network."],
-    wideImage: false
+    wideImage: false,
+    languages: [languages[0], languages[3]]
   },
   bakeFromHome: {
     name: "Bake From Home",
@@ -82246,11 +82266,12 @@ var projects = {
     links: ["https://chrisvettese.github.io/seg3125-react-lab/", "https://github.com/chrisvettese/seg3125-react-lab", ""],
     images: [_i8.default, _i9.default, _i10.default, _i11.default],
     captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
-    wideImage: true
+    wideImage: true,
+    languages: [languages[1], languages[2]]
   }
 };
 exports.projects = projects;
-},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG","./images/java.png":"src/images/java.png","./images/javascript.png":"src/images/javascript.png","./images/react.png":"src/images/react.png","./images/android.png":"src/images/android.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -84372,8 +84393,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _core = require("@material-ui/core");
 
-var _Divider = _interopRequireDefault(require("@material-ui/core/Divider"));
-
 var _makeStyles = _interopRequireDefault(require("@material-ui/core/styles/makeStyles"));
 
 var _Grid = _interopRequireDefault(require("@material-ui/core/Grid"));
@@ -84399,8 +84418,6 @@ require("react-responsive-carousel/lib/styles/carousel.min.css");
 var _reactResponsiveCarousel = require("react-responsive-carousel");
 
 var _Profile = _interopRequireDefault(require("./Profile"));
-
-var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84461,6 +84478,11 @@ var useStyles = (0, _makeStyles.default)(function () {
     projectSources: {
       marginLeft: "2em",
       marginTop: "-1em",
+      width: "150%"
+    },
+    projectLanguages: {
+      marginLeft: "2em",
+      marginTop: "-2em",
       width: "150%"
     },
     projectBox: {
@@ -84536,7 +84558,7 @@ function App() {
     var project = _ref2.project;
 
     if (_projects.projects[project].links[0].length > 0) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("a", {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
         href: _projects.projects[project].links[0]
       }, /*#__PURE__*/_react.default.createElement("img", {
@@ -84547,7 +84569,28 @@ function App() {
         target: "_blank",
         href: _projects.projects[project].links[0],
         className: classes.standardAdjust
-      }, "Demo Project"), "\xA0\xA0\xA0\xA0");
+      }, "Demo Project"));
+    }
+
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
+  }
+
+  function GithubLink(_ref3) {
+    var project = _ref3.project;
+
+    if (_projects.projects[project].links[1].length > 0) {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: _projects.projects[project].links[1]
+      }, /*#__PURE__*/_react.default.createElement("img", {
+        src: _github.default,
+        className: classes.icon,
+        alt: "Demo"
+      })), /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: _projects.projects[project].links[1],
+        className: classes.standardAdjust
+      }, "GitHub"));
     }
 
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
@@ -84595,18 +84638,9 @@ function App() {
       className: classes.projectSources
     }, /*#__PURE__*/_react.default.createElement(DemoLink, {
       project: project
-    }), /*#__PURE__*/_react.default.createElement("a", {
-      target: "_blank",
-      href: _projects.projects[project].links[1]
-    }, /*#__PURE__*/_react.default.createElement("img", {
-      src: _github.default,
-      className: classes.icon,
-      alt: "GitHub Icon"
-    })), /*#__PURE__*/_react.default.createElement("a", {
-      target: "_blank",
-      href: _projects.projects[project].links[1],
-      className: classes.standardAdjust
-    }, "GitHub"), /*#__PURE__*/_react.default.createElement(DevpostLink, {
+    }), /*#__PURE__*/_react.default.createElement(GithubLink, {
+      project: project
+    }), /*#__PURE__*/_react.default.createElement(DevpostLink, {
       project: project
     })))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
@@ -84649,7 +84683,18 @@ function App() {
     }, states[projectKeys.indexOf(project)][0])), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    }))));
+    }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
+      container: true,
+      className: classes.projectLanguages
+    }, _projects.projects[project].languages.map(function (language) {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("img", {
+        src: language[0],
+        className: classes.icon,
+        alt: "Demo"
+      }), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+        className: classes.standardAdjust
+      }, language[1]));
+    }))))));
   }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
     className: classes.appBar,
     color: "secondary",
@@ -84658,7 +84703,7 @@ function App() {
     align: "center"
   }, "Website made with React by Chris Vettese")));
 }
-},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/Divider":"node_modules/@material-ui/core/esm/Divider/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js","@material-ui/core/Box":"node_modules/@material-ui/core/esm/Box/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
