@@ -84478,7 +84478,7 @@ var useStyles = (0, _makeStyles.default)(function () {
       fontSize: "1.5em",
       width: "170%",
       marginLeft: "2em",
-      marginBottom: "4em",
+      marginBottom: "3em",
       marginTop: "0.5em"
     },
     projectSources: {
