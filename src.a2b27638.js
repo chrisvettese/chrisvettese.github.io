@@ -84444,8 +84444,7 @@ var useStyles = (0, _makeStyles.default)(function () {
       height: "100%"
     },
     projectName: {
-      fontWeight: "bold",
-      marginTop: "0.5em"
+      fontWeight: "bold"
     },
     captionWide: {
       fontStyle: "italic"
@@ -84461,14 +84460,14 @@ var useStyles = (0, _makeStyles.default)(function () {
     },
     projectSources: {
       marginLeft: "2em",
-      marginTop: "0.1em"
+      marginTop: "-1em"
     },
     projectBox: {
       marginLeft: "4em",
       marginRight: "4em",
       borderRadius: "25px",
       background: "#A9D7D8",
-      padding: "20px",
+      padding: "1.5em",
       marginTop: "2em",
       marginBottom: "2em"
     },
@@ -84491,9 +84490,6 @@ var theme = (0, _createMuiTheme.default)({
   palette: {
     background: {
       default: "#E6EFF4"
-    },
-    primary: {
-      main: "#D5E8F2"
     },
     secondary: {
       main: "#5F747F"
@@ -84705,7 +84701,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55056" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55104" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
