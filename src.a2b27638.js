@@ -84466,19 +84466,19 @@ var useStyles = (0, _makeStyles.default)(function () {
       fontWeight: "bold"
     },
     captionWide: {
-      fontStyle: "italic",
-      marginTop: "-1em"
+      marginTop: "0.5em",
+      fontStyle: "italic"
     },
     captionNarrow: {
       width: "70%",
-      fontStyle: "italic",
-      marginTop: "-1em"
+      marginTop: "0.5em",
+      fontStyle: "italic"
     },
     projectDescription: {
       fontSize: "1.5em",
-      width: "50%",
+      width: "170%",
       marginLeft: "2em",
-      marginBottom: "2em",
+      marginBottom: "4em",
       marginTop: "0.5em"
     },
     projectSources: {
@@ -84488,7 +84488,7 @@ var useStyles = (0, _makeStyles.default)(function () {
     },
     projectLanguages: {
       marginLeft: "2em",
-      marginTop: "-2.5em",
+      marginTop: "-4em",
       width: "150%"
     },
     projectBox: {
@@ -84600,6 +84600,9 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
+    }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
+      container: true,
+      direction: "column"
     }, /*#__PURE__*/_react.default.createElement(_reactResponsiveCarousel.Carousel, {
       className: _projects.projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow,
       showThumbs: false,
@@ -84614,12 +84617,15 @@ function App() {
         src: image,
         alt: "Image of project"
       });
-    }))), /*#__PURE__*/_react.default.createElement(_core.Typography, {
-      className: classes.projectDescription
-    }, _projects.projects[project].description), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    })), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+      className: _projects.projects[project].wideImage ? classes.captionWide : classes.captionNarrow,
+      align: "center"
+    }, states[projectKeys.indexOf(project)][0]))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    })), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+      className: classes.projectDescription
+    }, _projects.projects[project].description))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       item: true,
       xs: 12,
@@ -84627,10 +84633,7 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
-    }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
-      className: _projects.projects[project].wideImage ? classes.captionWide : classes.captionNarrow,
-      align: "center"
-    }, states[projectKeys.indexOf(project)][0])), /*#__PURE__*/_react.default.createElement(_Grid.default, {
+    }), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
       xs: 4
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
@@ -84697,7 +84700,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57615" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
