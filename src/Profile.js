@@ -4,7 +4,6 @@ import {Typography} from "@material-ui/core";
 import githubIcon from "./images/github.png";
 import linkedinIcon from "./images/linkedin.png";
 import emailIcon from "./images/email.png";
-import {ThemeProvider} from "@material-ui/styles";
 import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 

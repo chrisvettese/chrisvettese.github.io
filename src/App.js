@@ -6,8 +6,6 @@ import {ThemeProvider} from "@material-ui/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import githubIcon from "./images/github.png";
-import devpostIcon from "./images/devpost.png";
-import demoIcon from "./images/demo.png";
 import AppBar from "@material-ui/core/AppBar";
 import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -122,54 +120,6 @@ export default function App() {
         states[projectKeys.indexOf(project)][1](projects[project].captions[captionIndex]);
     }
 
-    function DevpostLink({project}) {
-        if (projects[project].links[2].length > 0) {
-            return (
-                <>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a target="_blank" href={projects[project].links[2]}>
-                        <img src={devpostIcon} className={classes.icon} alt="Devpost Icon"/>
-                    </a>
-                    <a target="_blank" href={projects[project].links[2]}
-                       className={classes.standardAdjust}>Devpost</a>
-                </>
-            )
-        }
-        return <></>
-    }
-
-    function DemoLink({project}) {
-        if (projects[project].links[0].length > 0) {
-            return (
-                <>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a target="_blank" href={projects[project].links[0]}>
-                        <img src={demoIcon} className={classes.icon} alt="Demo"/>
-                    </a>
-                    <a target="_blank" href={projects[project].links[0]}
-                       className={classes.standardAdjust}>Demo Project</a>
-                </>
-            )
-        }
-        return <></>
-    }
-
-    function GithubLink({project}) {
-        if (projects[project].links[1].length > 0) {
-            return (
-                <>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a target="_blank" href={projects[project].links[1]}>
-                        <img src={githubIcon} className={classes.icon} alt="Demo"/>
-                    </a>
-                    <a target="_blank" href={projects[project].links[1]}
-                       className={classes.standardAdjust}>GitHub</a>
-                </>
-            )
-        }
-        return <></>
-    }
-
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
@@ -204,9 +154,20 @@ export default function App() {
                                     </Grid>
                                     <Grid item xs={4}>
                                         <Grid container className={classes.projectSources}>
-                                            <DemoLink project={project}/>
-                                            <GithubLink project={project}/>
-                                            <DevpostLink project={project}/>
+                                            {
+                                                projects[project].links.map(link => {
+                                                    return (
+                                                        <>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a target="_blank" href={link[1]}>
+                                                                <img src={link[0][0]} className={classes.icon} alt="Demo"/>
+                                                            </a>
+                                                            <a target="_blank" href={link[1]}
+                                                               className={classes.standardAdjust}>{link[0][1]}</a>
+                                                        </>
+                                                    )
+                                                })
+                                            }
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -245,7 +206,7 @@ export default function App() {
                                                 projects[project].languages.map(language => {
                                                     return (
                                                         <>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <img src={language[0]} className={classes.icon} alt="Demo"/>
                                                             <Typography
                                                                 className={classes.standardAdjust}>{language[1]}</Typography>
