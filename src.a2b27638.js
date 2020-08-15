@@ -84596,14 +84596,14 @@ function App() {
       project: project
     }), /*#__PURE__*/_react.default.createElement("a", {
       target: "_blank",
-      href: _projects.projects[project].links[0]
+      href: _projects.projects[project].links[1]
     }, /*#__PURE__*/_react.default.createElement("img", {
       src: _github.default,
       className: classes.icon,
       alt: "GitHub Icon"
     })), /*#__PURE__*/_react.default.createElement("a", {
       target: "_blank",
-      href: _projects.projects[project].links[0],
+      href: _projects.projects[project].links[1],
       className: classes.standardAdjust
     }, "GitHub"), /*#__PURE__*/_react.default.createElement(DevpostLink, {
       project: project
@@ -84701,7 +84701,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55104" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55176" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
