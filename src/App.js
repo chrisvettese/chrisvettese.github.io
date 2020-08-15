@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import {ThemeProvider} from "@material-ui/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import githubIcon from "./images/github.png";
 import AppBar from "@material-ui/core/AppBar";
 import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -50,16 +49,20 @@ const useStyles = makeStyles(() => ({
         fontWeight: "bold"
     },
     captionWide: {
+        marginTop: "0.5em",
         fontStyle: "italic"
     },
     captionNarrow: {
         width: "70%",
+        marginTop: "0.5em",
         fontStyle: "italic"
     },
     projectDescription: {
         fontSize: "1.5em",
         width: "170%",
-        marginLeft: "2em"
+        marginLeft: "2em",
+        marginBottom: "3em",
+        marginTop: "0.5em"
     },
     projectSources: {
         marginLeft: "2em",
@@ -68,7 +71,7 @@ const useStyles = makeStyles(() => ({
     },
     projectLanguages: {
         marginLeft: "2em",
-        marginTop: "-2em",
+        marginTop: "-4em",
         width: "150%"
     },
     projectBox: {
@@ -158,12 +161,12 @@ export default function App() {
                                                 projects[project].links.map(link => {
                                                     return (
                                                         <>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <a target="_blank" href={link[1]}>
                                                                 <img src={link[0][0]} className={classes.icon} alt="Demo"/>
                                                             </a>
                                                             <a target="_blank" href={link[1]}
                                                                className={classes.standardAdjust}>{link[0][1]}</a>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </>
                                                     )
                                                 })
@@ -173,21 +176,26 @@ export default function App() {
                                 </Grid>
                                 <Grid container item xs={12} spacing={3}>
                                     <Grid item xs={4}>
-                                        <Carousel
-                                            className={projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow}
-                                            showThumbs={false}
-                                            showStatus={false}
-                                            onChange={index => changeCaption(project, index)}>
-                                            {
-                                                projects[project].images.map((image, index) => {
-                                                    return <img
-                                                        className={projects[project].wideImage ? classes.carouselImageWide : classes.carouselImageNarrow}
-                                                        key={projects[project].name + index}
-                                                        src={image}
-                                                        alt={"Image of project"}/>
-                                                })
-                                            }
-                                        </Carousel>
+                                        <Grid container direction={"column"}>
+                                            <Carousel
+                                                className={projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow}
+                                                showThumbs={false}
+                                                showStatus={false}
+                                                onChange={index => changeCaption(project, index)}>
+                                                {
+                                                    projects[project].images.map((image, index) => {
+                                                        return <img
+                                                            className={projects[project].wideImage ? classes.carouselImageWide : classes.carouselImageNarrow}
+                                                            key={projects[project].name + index}
+                                                            src={image}
+                                                            alt={"Image of project"}/>
+                                                    })
+                                                }
+                                            </Carousel>
+                                            <Typography
+                                                className={projects[project].wideImage ? classes.captionWide : classes.captionNarrow}
+                                                align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
+                                        </Grid>
                                     </Grid>
                                     <Grid item xs={4}>
                                         <Typography
@@ -196,9 +204,7 @@ export default function App() {
                                 </Grid>
                                 <Grid container item xs={12} spacing={3}>
                                     <Grid item xs={4}>
-                                        <Typography
-                                            className={projects[project].wideImage ? classes.captionWide : classes.captionNarrow}
-                                            align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
+
                                     </Grid>
                                     <Grid item xs={4}>
                                         <Grid container className={classes.projectLanguages}>
@@ -206,10 +212,10 @@ export default function App() {
                                                 projects[project].languages.map(language => {
                                                     return (
                                                         <>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <img src={language[0]} className={classes.icon} alt="Demo"/>
                                                             <Typography
                                                                 className={classes.standardAdjust}>{language[1]}</Typography>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </>
                                                     )
                                                 })
