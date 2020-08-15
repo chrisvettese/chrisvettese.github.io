@@ -84453,7 +84453,7 @@ var useStyles = (0, _makeStyles.default)(function () {
       left: "2em"
     },
     carouselNarrow: {
-      width: "70%",
+      width: "50%",
       left: "2em"
     },
     carouselImageWide: {
@@ -84470,7 +84470,7 @@ var useStyles = (0, _makeStyles.default)(function () {
       fontStyle: "italic"
     },
     captionNarrow: {
-      width: "70%",
+      width: "50%",
       marginTop: "0.5em",
       fontStyle: "italic"
     },
