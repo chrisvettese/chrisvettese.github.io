@@ -82185,6 +82185,16 @@ module.exports = "/i2.a749c0c1.PNG";
 module.exports = "/i3.4cb7f553.PNG";
 },{}],"src/images/bakeFromHome/i4.PNG":[function(require,module,exports) {
 module.exports = "/i4.0ecc3d84.PNG";
+},{}],"src/images/fortressAlliance/i1.png":[function(require,module,exports) {
+module.exports = "/i1.4686571b.png";
+},{}],"src/images/fortressAlliance/i2.png":[function(require,module,exports) {
+module.exports = "/i2.164ef812.png";
+},{}],"src/images/fortressAlliance/i3.png":[function(require,module,exports) {
+module.exports = "/i3.33b65e3f.png";
+},{}],"src/images/fortressAlliance/i4.png":[function(require,module,exports) {
+module.exports = "/i4.f6afd6d6.png";
+},{}],"src/images/fortressAlliance/i5.png":[function(require,module,exports) {
+module.exports = "/i5.1703f772.png";
 },{}],"src/images/java.png":[function(require,module,exports) {
 module.exports = "/java.ed20722d.png";
 },{}],"src/images/javascript.png":[function(require,module,exports) {
@@ -82195,6 +82205,8 @@ module.exports = "/react.9bc4a15d.png";
 module.exports = "/android.aef6b203.png";
 },{}],"src/images/firebase.png":[function(require,module,exports) {
 module.exports = "/firebase.24e097a2.png";
+},{}],"src/images/libgdx.png":[function(require,module,exports) {
+module.exports = "/libgdx.83b4bff4.png";
 },{}],"src/images/github.png":[function(require,module,exports) {
 module.exports = "/github.c6a36f36.png";
 },{}],"src/images/devpost.png":[function(require,module,exports) {
@@ -82231,6 +82243,16 @@ var _i10 = _interopRequireDefault(require("./images/bakeFromHome/i3.PNG"));
 
 var _i11 = _interopRequireDefault(require("./images/bakeFromHome/i4.PNG"));
 
+var _i12 = _interopRequireDefault(require("./images/fortressAlliance/i1.png"));
+
+var _i13 = _interopRequireDefault(require("./images/fortressAlliance/i2.png"));
+
+var _i14 = _interopRequireDefault(require("./images/fortressAlliance/i3.png"));
+
+var _i15 = _interopRequireDefault(require("./images/fortressAlliance/i4.png"));
+
+var _i16 = _interopRequireDefault(require("./images/fortressAlliance/i5.png"));
+
 var _java = _interopRequireDefault(require("./images/java.png"));
 
 var _javascript = _interopRequireDefault(require("./images/javascript.png"));
@@ -82241,6 +82263,8 @@ var _android = _interopRequireDefault(require("./images/android.png"));
 
 var _firebase = _interopRequireDefault(require("./images/firebase.png"));
 
+var _libgdx = _interopRequireDefault(require("./images/libgdx.png"));
+
 var _github = _interopRequireDefault(require("./images/github.png"));
 
 var _devpost = _interopRequireDefault(require("./images/devpost.png"));
@@ -82249,7 +82273,7 @@ var _demo = _interopRequireDefault(require("./images/demo.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var languages = [[_java.default, "Java"], [_javascript.default, "JavaScript"], [_react.default, "React"], [_android.default, "Android"], [_firebase.default, "Firebase"]];
+var languages = [[_java.default, "Java"], [_javascript.default, "JavaScript"], [_react.default, "React"], [_android.default, "Android"], [_firebase.default, "Firebase"], [_libgdx.default, "libGDX"]];
 var websites = [[_demo.default, "Demo Project"], [_github.default, "GitHub"], [_devpost.default, "Devpost"]];
 var projects = {
   basil: {
@@ -82278,10 +82302,19 @@ var projects = {
     captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
     wideImage: true,
     languages: [languages[1], languages[2]]
+  },
+  fortressAlliance: {
+    name: "Fortress Alliance",
+    description: "Fortress Alliance is a 2D multiplayer platform game written in Java with libGDX. The game consists of two teams that fight each other and aim to get the most kills before the timer runs out. It has a server, which hosts the game, a map maker program, which can be used to design levels, and a client that is used to play the game. Fortress Alliance demonstrates the use of object-oriented programming, efficient collision detection algorithms, and multithreading in Java.",
+    links: [[websites[0], "https://github.com/chrisvettese/FortressAlliance#Setup"], [websites[1], "https://github.com/chrisvettese/FortressAlliance"]],
+    images: [_i12.default, _i13.default, _i14.default, _i15.default, _i16.default],
+    captions: ["A scene in the example map.", "The waiting screen.", "A fight between two players.", "When a player dies.", "Editing the map with the map maker."],
+    wideImage: true,
+    languages: [languages[0], languages[5]]
   }
 };
 exports.projects = projects;
-},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG","./images/java.png":"src/images/java.png","./images/javascript.png":"src/images/javascript.png","./images/react.png":"src/images/react.png","./images/android.png":"src/images/android.png","./images/firebase.png":"src/images/firebase.png","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG","./images/fortressAlliance/i1.png":"src/images/fortressAlliance/i1.png","./images/fortressAlliance/i2.png":"src/images/fortressAlliance/i2.png","./images/fortressAlliance/i3.png":"src/images/fortressAlliance/i3.png","./images/fortressAlliance/i4.png":"src/images/fortressAlliance/i4.png","./images/fortressAlliance/i5.png":"src/images/fortressAlliance/i5.png","./images/java.png":"src/images/java.png","./images/javascript.png":"src/images/javascript.png","./images/react.png":"src/images/react.png","./images/android.png":"src/images/android.png","./images/firebase.png":"src/images/firebase.png","./images/libgdx.png":"src/images/libgdx.png","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -84700,7 +84733,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57615" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64479" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
