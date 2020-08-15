@@ -6,49 +6,21 @@ import Grid from "@material-ui/core/Grid";
 import {ThemeProvider} from "@material-ui/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import profileImage from "./images/profile.png";
 import githubIcon from "./images/github.png";
-import linkedinIcon from "./images/linkedin.png";
-import emailIcon from "./images/email.png";
 import devpostIcon from "./images/devpost.png";
+import demoIcon from "./images/demo.png";
 import AppBar from "@material-ui/core/AppBar";
 import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
+import Profile from "./Profile";
+import Box from "@material-ui/core/Box";
 
-const useStyles = makeStyles({
-    bold: {
-        fontWeight: "bold"
-    },
-    profile: {
-        marginLeft: "2em",
-        marginTop: "3em",
-        maxWidth: "auto",
-        maxHeight: "15em",
-        marginBottom: "2em"
-    },
-    nameEducation: {
-        marginTop: "7em",
-        marginLeft: "2em",
-    },
-    standardSize: {
-        fontSize: "1.5em"
-    },
+const useStyles = makeStyles(() => ({
     icon: {
         width: "auto",
         height: "2.5em",
         marginRight: "0.5em",
-        marginTop: "1em"
-    },
-    standardAdjust: {
-        fontSize: "1.5em",
-        marginTop: "0.7em"
-    },
-    socialMedia: {
-        marginTop: "5em",
-        marginRight: "2em"
-    },
-    emailAdjust: {
         marginTop: "1em"
     },
     standardParagraph: {
@@ -56,6 +28,10 @@ const useStyles = makeStyles({
         marginLeft: "2em",
         marginRight: "2em",
         marginBottom: "1em"
+    },
+    standardAdjust: {
+        fontSize: "1.5em",
+        marginTop: "0.7em"
     },
     appBar: {
         top: "auto",
@@ -85,18 +61,35 @@ const useStyles = makeStyles({
         width: "70%",
         fontStyle: "italic"
     },
-    alignLeft: {
-        marginLeft: "4em"
-    },
     projectDescription: {
         fontSize: "1.5em",
         width: "170%",
         marginLeft: "2em"
     },
     projectSources: {
-        marginLeft: "2em"
+        marginLeft: "2em",
+        marginTop: "0.1em"
+    },
+    projectBox: {
+        marginLeft: "4em",
+        marginRight: "4em",
+        borderRadius: "25px",
+        background: "#A9D7D8",
+        padding: "20px",
+        marginTop: "2em",
+        marginBottom: "2em"
+    },
+    dividerText: {
+        width: "100%",
+        borderBottom: "2px solid #000",
+        lineHeight: "0.1em",
+        margin: "1em 0 1em 0",
+    },
+    dividerSpan: {
+        background: "#E6EFF4",
+        padding: "0 10px"
     }
-});
+}));
 
 const theme = createMuiTheme({
     typography: {
@@ -105,6 +98,9 @@ const theme = createMuiTheme({
     palette: {
         background: {
             default: "#E6EFF4"
+        },
+        primary: {
+            main: "#D5E8F2"
         },
         secondary: {
             main: "#5F747F"
@@ -126,7 +122,7 @@ export default function App() {
     }
 
     function DevpostLink({project}) {
-        if (projects[project].links.length > 1) {
+        if (projects[project].links[1].length > 0) {
             return (
                 <>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,61 +137,31 @@ export default function App() {
         return <></>
     }
 
+    function DemoLink({project}) {
+        if (projects[project].links[2].length > 0) {
+            return (
+                <>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a target="_blank" href={projects[project].links[2]}>
+                        <img src={demoIcon} className={classes.icon} alt="Demo"/>
+                    </a>
+                    <a target="_blank" href={projects[project].links[2]}
+                       className={classes.standardAdjust}>Demo Project</a>
+                </>
+            )
+        }
+        return <></>
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <Grid container justify="space-between">
-                <Grid item>
-                    <Grid container>
-                        <Grid item>
-                            <img src={profileImage} className={classes.profile} alt="Profile Picture"/>
-                        </Grid>
-                        <Grid item>
-                            <div className={classes.nameEducation}>
-                                <Typography variant="h3" className={classes.bold}>Chris Vettese</Typography>
-                                <Typography className={classes.standardSize}>3rd Year, BASc in Software
-                                    Engineering</Typography>
-                                <Typography className={classes.standardSize}>University of Ottawa</Typography>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
-                    <div className={classes.socialMedia}>
-                        <Grid container>
-                            <a target="_blank" href="https://github.com/chrisvettese/">
-                                <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
-                            </a>
-                            <a target="_blank" href="https://github.com/chrisvettese/"
-                               className={classes.standardAdjust}>GitHub</a>
-                        </Grid>
-                        <Grid container>
-                            <a target="_blank" href="https://www.linkedin.com/in/christopher-vettese/">
-                                <img src={linkedinIcon} className={classes.icon} alt="LinkedIn Icon"/>
-                            </a>
-                            <a target="_blank" href="https://www.linkedin.com/in/christopher-vettese/"
-                               className={classes.standardAdjust}>LinkedIn</a>
-                        </Grid>
-                        <Grid container>
-                            <Grid item>
-                                <a href="mailto:cvett018@uottawa.ca">
-                                    <img src={emailIcon} className={classes.icon} alt="Email Icon"/>
-                                </a>
-                            </Grid>
-                            <Grid item className={classes.emailAdjust}>
-                                <a href="mailto:cvett018@uottawa.ca"
-                                   className={classes.standardAdjust}>cvett018@uottawa.ca</a>
-                                <br/>
-                                <a href="mailto:chris.vettese2@gmail.com"
-                                   className={classes.standardAdjust}>chris.vettese2@gmail.com</a>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </Grid>
-            </Grid>
-            <Divider/>
-            <Typography align="center" variant="h3">About Me</Typography>
-            <Divider/>
+            <Profile/>
+            <Typography align="center" variant="h3" className={classes.dividerText}>
+                <span className={classes.dividerSpan}>
+                    About Me
+                </span>
+            </Typography>
             <Typography className={classes.standardParagraph} align="center">
                 I'm a software engineering student at University of Ottawa.
                 I've completed 4 semesters of courses, and am currently in my 3rd co-op work term.
@@ -204,13 +170,15 @@ export default function App() {
                 Java, Python, JavaScript, and various frameworks.
                 The goal of this website is to demonstrate some of my projects.
             </Typography>
-            <Divider/>
-            <Typography align="center" variant="h3">Projects</Typography>
-            <Divider/>
+            <Typography align="center" variant="h3" className={classes.dividerText}>
+                <span className={classes.dividerSpan}>
+                    Projects
+                </span>
+            </Typography>
             {
                 projectKeys.map(project => {
                     return (
-                        <div key={projects[project].name} className={classes.alignLeft}>
+                        <div key={projects[project].name} className={classes.projectBox}>
                             <Grid container spacing={1}>
                                 <Grid container item xs={12} spacing={3}>
                                     <Grid item xs={4}>
@@ -225,6 +193,7 @@ export default function App() {
                                             <a target="_blank" href={projects[project].links[0]}
                                                className={classes.standardAdjust}>GitHub</a>
                                             <DevpostLink project={project}/>
+                                            <DemoLink project={project}/>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -262,7 +231,6 @@ export default function App() {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Divider/>
                         </div>
                     )
                 })
