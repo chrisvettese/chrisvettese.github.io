@@ -84470,8 +84470,8 @@ var useStyles = (0, _makeStyles.default)(function () {
     },
     standardParagraph: {
       fontSize: "1.5em",
-      marginLeft: "2em",
-      marginRight: "2em",
+      marginLeft: "2.8em",
+      marginRight: "2.8em",
       marginBottom: "1em"
     },
     standardAdjust: {
