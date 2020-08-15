@@ -84466,17 +84466,20 @@ var useStyles = (0, _makeStyles.default)(function () {
       fontWeight: "bold"
     },
     captionWide: {
-      fontStyle: "italic"
+      fontStyle: "italic",
+      marginTop: "-1em"
     },
     captionNarrow: {
       width: "70%",
-      fontStyle: "italic"
+      fontStyle: "italic",
+      marginTop: "-1em"
     },
     projectDescription: {
       fontSize: "1.5em",
-      width: "170%",
+      width: "50%",
       marginLeft: "2em",
-      marginBottom: "2em"
+      marginBottom: "2em",
+      marginTop: "0.5em"
     },
     projectSources: {
       marginLeft: "2em",
@@ -84485,7 +84488,7 @@ var useStyles = (0, _makeStyles.default)(function () {
     },
     projectLanguages: {
       marginLeft: "2em",
-      marginTop: "-2em",
+      marginTop: "-2.5em",
       width: "150%"
     },
     projectBox: {
@@ -84577,7 +84580,7 @@ function App() {
       container: true,
       className: classes.projectSources
     }, _projects.projects[project].links.map(function (link) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
         href: link[1]
       }, /*#__PURE__*/_react.default.createElement("img", {
@@ -84588,7 +84591,7 @@ function App() {
         target: "_blank",
         href: link[1],
         className: classes.standardAdjust
-      }, link[0][1]));
+      }, link[0][1]), "\xA0\xA0\xA0\xA0\xA0");
     })))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       item: true,
@@ -84611,7 +84614,7 @@ function App() {
         src: image,
         alt: "Image of project"
       });
-    }))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    }))), /*#__PURE__*/_react.default.createElement(_core.Typography, {
       className: classes.projectDescription
     }, _projects.projects[project].description), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       item: true,
@@ -84634,13 +84637,13 @@ function App() {
       container: true,
       className: classes.projectLanguages
     }, _projects.projects[project].languages.map(function (language) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("img", {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("img", {
         src: language[0],
         className: classes.icon,
         alt: "Demo"
       }), /*#__PURE__*/_react.default.createElement(_core.Typography, {
         className: classes.standardAdjust
-      }, language[1]));
+      }, language[1]), "\xA0\xA0\xA0\xA0\xA0");
     }))))));
   }), /*#__PURE__*/_react.default.createElement(_AppBar.default, {
     className: classes.appBar,
@@ -84694,7 +84697,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57074" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57551" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
