@@ -82297,7 +82297,7 @@ var projects = {
   bakeFromHome: {
     name: "Bake From Home",
     description: "This is a React website made for a user interface design course. It demonstrates the ability to search for baking recipes in various ways. Plugins used include Material UI and React Router.",
-    links: [[websites[0], "https://chrisvettese.github.io/seg3125-react-lab/"], [websites[1], "https://github.com/chrisvettese/seg3125-react-lab"]],
+    links: [[websites[0], "https://chrisvettese.github.io/bake-from-home/"], [websites[1], "https://github.com/chrisvettese/bake-from-home"]],
     images: [_i8.default, _i9.default, _i10.default, _i11.default],
     captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
     wideImage: true,
@@ -84563,9 +84563,9 @@ var theme = (0, _createMuiTheme.default)({
 function App() {
   var classes = useStyles();
   var projectKeys = Object.keys(_projects.projects);
-  var states = [];
-  projectKeys.forEach(function (project) {
-    states.push((0, _react.useState)(_projects.projects[project].captions[0]));
+  var states = new Array(projectKeys.length);
+  projectKeys.forEach(function (project, index) {
+    states[index] = (0, _react.useState)(_projects.projects[project].captions[0]);
   });
 
   function changeCaption(project, captionIndex) {
@@ -84733,7 +84733,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64479" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51031" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
