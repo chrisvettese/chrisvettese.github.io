@@ -1,6 +1,5 @@
-import React, {Fragment, useState} from "react";
+import React, {useState} from "react";
 import {Typography} from "@material-ui/core";
-import Divider from "@material-ui/core/Divider";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Grid from "@material-ui/core/Grid";
 import {ThemeProvider} from "@material-ui/styles";
@@ -14,7 +13,6 @@ import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
 import Profile from "./Profile";
-import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(() => ({
     icon: {
@@ -51,8 +49,7 @@ const useStyles = makeStyles(() => ({
         height: "100%",
     },
     projectName: {
-        fontWeight: "bold",
-        marginTop: "0.5em"
+        fontWeight: "bold"
     },
     captionWide: {
         fontStyle: "italic"
@@ -68,14 +65,20 @@ const useStyles = makeStyles(() => ({
     },
     projectSources: {
         marginLeft: "2em",
-        marginTop: "0.1em"
+        marginTop: "-1em",
+        width: "150%"
+    },
+    projectLanguages: {
+        marginLeft: "2em",
+        marginTop: "-2em",
+        width: "150%"
     },
     projectBox: {
         marginLeft: "4em",
         marginRight: "4em",
         borderRadius: "25px",
         background: "#A9D7D8",
-        padding: "20px",
+        padding: "1.5em",
         marginTop: "2em",
         marginBottom: "2em"
     },
@@ -84,23 +87,21 @@ const useStyles = makeStyles(() => ({
         borderBottom: "2px solid #000",
         lineHeight: "0.1em",
         margin: "1em 0 1em 0",
+        fontFamily: `"Roboto", "Helvetica", sans-serif`
     },
     dividerSpan: {
-        background: "#E6EFF4",
+        background: "#E8EDEF",
         padding: "0 10px"
     }
 }));
 
 const theme = createMuiTheme({
     typography: {
-        fontFamily: `"Helvetica", "Arial", sans-serif`
+        fontFamily: `"Helvetica", "Roboto", sans-serif`
     },
     palette: {
         background: {
-            default: "#E6EFF4"
-        },
-        primary: {
-            main: "#D5E8F2"
+            default: "#E8EDEF"
         },
         secondary: {
             main: "#5F747F"
@@ -122,14 +123,14 @@ export default function App() {
     }
 
     function DevpostLink({project}) {
-        if (projects[project].links[1].length > 0) {
+        if (projects[project].links[2].length > 0) {
             return (
                 <>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a target="_blank" href={projects[project].links[1]}>
+                    <a target="_blank" href={projects[project].links[2]}>
                         <img src={devpostIcon} className={classes.icon} alt="Devpost Icon"/>
                     </a>
-                    <a target="_blank" href={projects[project].links[1]}
+                    <a target="_blank" href={projects[project].links[2]}
                        className={classes.standardAdjust}>Devpost</a>
                 </>
             )
@@ -138,15 +139,31 @@ export default function App() {
     }
 
     function DemoLink({project}) {
-        if (projects[project].links[2].length > 0) {
+        if (projects[project].links[0].length > 0) {
             return (
                 <>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a target="_blank" href={projects[project].links[2]}>
+                    <a target="_blank" href={projects[project].links[0]}>
                         <img src={demoIcon} className={classes.icon} alt="Demo"/>
                     </a>
-                    <a target="_blank" href={projects[project].links[2]}
+                    <a target="_blank" href={projects[project].links[0]}
                        className={classes.standardAdjust}>Demo Project</a>
+                </>
+            )
+        }
+        return <></>
+    }
+
+    function GithubLink({project}) {
+        if (projects[project].links[1].length > 0) {
+            return (
+                <>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a target="_blank" href={projects[project].links[1]}>
+                        <img src={githubIcon} className={classes.icon} alt="Demo"/>
+                    </a>
+                    <a target="_blank" href={projects[project].links[1]}
+                       className={classes.standardAdjust}>GitHub</a>
                 </>
             )
         }
@@ -162,7 +179,7 @@ export default function App() {
                     About Me
                 </span>
             </Typography>
-            <Typography className={classes.standardParagraph} align="center">
+            <Typography className={classes.standardParagraph}>
                 I'm a software engineering student at University of Ottawa.
                 I've completed 4 semesters of courses, and am currently in my 3rd co-op work term.
                 I grew up in Toronto, and have been interested in programming for many years.
@@ -187,13 +204,9 @@ export default function App() {
                                     </Grid>
                                     <Grid item xs={4}>
                                         <Grid container className={classes.projectSources}>
-                                            <a target="_blank" href={projects[project].links[0]}>
-                                                <img src={githubIcon} className={classes.icon} alt="GitHub Icon"/>
-                                            </a>
-                                            <a target="_blank" href={projects[project].links[0]}
-                                               className={classes.standardAdjust}>GitHub</a>
-                                            <DevpostLink project={project}/>
                                             <DemoLink project={project}/>
+                                            <GithubLink project={project}/>
+                                            <DevpostLink project={project}/>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -227,7 +240,20 @@ export default function App() {
                                             align="center">{states[projectKeys.indexOf(project)][0]}</Typography>
                                     </Grid>
                                     <Grid item xs={4}>
-
+                                        <Grid container className={classes.projectLanguages}>
+                                            {
+                                                projects[project].languages.map(language => {
+                                                    return (
+                                                        <>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <img src={language[0]} className={classes.icon} alt="Demo"/>
+                                                            <Typography
+                                                                className={classes.standardAdjust}>{language[1]}</Typography>
+                                                        </>
+                                                    )
+                                                })
+                                            }
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
