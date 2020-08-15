@@ -82165,10 +82165,6 @@ var _default = makeStyles;
 exports.default = _default;
 },{"@babel/runtime/helpers/interopRequireDefault":"node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","./defaultTheme":"node_modules/@material-ui/core/styles/defaultTheme.js"}],"src/images/github.png":[function(require,module,exports) {
 module.exports = "/github.c6a36f36.png";
-},{}],"src/images/devpost.png":[function(require,module,exports) {
-module.exports = "/devpost.580aede0.png";
-},{}],"src/images/demo.png":[function(require,module,exports) {
-module.exports = "/demo.c4f9fb71.png";
 },{}],"src/images/basil/i1.jpg":[function(require,module,exports) {
 module.exports = "/i1.7456282e.jpg";
 },{}],"src/images/basil/i2.jpg":[function(require,module,exports) {
@@ -82199,6 +82195,12 @@ module.exports = "/javascript.40174736.png";
 module.exports = "/react.9bc4a15d.png";
 },{}],"src/images/android.png":[function(require,module,exports) {
 module.exports = "/android.aef6b203.png";
+},{}],"src/images/firebase.png":[function(require,module,exports) {
+module.exports = "/firebase.24e097a2.png";
+},{}],"src/images/devpost.png":[function(require,module,exports) {
+module.exports = "/devpost.580aede0.png";
+},{}],"src/images/demo.png":[function(require,module,exports) {
+module.exports = "/demo.c4f9fb71.png";
 },{}],"src/projects.js":[function(require,module,exports) {
 "use strict";
 
@@ -82237,15 +82239,23 @@ var _react = _interopRequireDefault(require("./images/react.png"));
 
 var _android = _interopRequireDefault(require("./images/android.png"));
 
+var _firebase = _interopRequireDefault(require("./images/firebase.png"));
+
+var _github = _interopRequireDefault(require("./images/github.png"));
+
+var _devpost = _interopRequireDefault(require("./images/devpost.png"));
+
+var _demo = _interopRequireDefault(require("./images/demo.png"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var languages = [[_java.default, "Java"], [_javascript.default, "JavaScript"], [_react.default, "React"], [_android.default, "Android"]]; //format for links: ["", "", ""] -> [app demo link, github link, devpost link]. empty quotes when app doesn't have a link
-
+var languages = [[_java.default, "Java"], [_javascript.default, "JavaScript"], [_react.default, "React"], [_android.default, "Android"], [_firebase.default, "Firebase"]];
+var websites = [[_demo.default, "Demo Project"], [_github.default, "GitHub"], [_devpost.default, "Devpost"]];
 var projects = {
   basil: {
     name: "Basil",
     description: "I collaborated on Basil for uOttaHack 2020. Basil is a web app that allows users to enter ingredients they have in their kitchen, and then matches these ingredients with recipes found across the internet. Basil then goes a step further by displaying the nutrition information for each recipe, and assigning each recipe as health rating to allow the user to determine which recipe is the healthiest.",
-    links: ["", "https://github.com/kareemassad/basil", "https://devpost.com/software/basil-94xomp"],
+    links: [[websites[1], "https://github.com/kareemassad/basil"], [websites[2], "https://devpost.com/software/basil-94xomp"]],
     images: [_i.default, _i2.default, _i3.default, _i4.default],
     captions: ["The home page of the app.", "Users can select from a list of suggested ingredients.", "Recipes are displayed based on the user's ingredients.", "Recipe information can be viewed in detail."],
     wideImage: true,
@@ -82254,16 +82264,16 @@ var projects = {
   daveWatcher: {
     name: "DaveWatcher",
     description: "Hundreds of millions of smartphones are thrown out each year. Many of these could have avoided landfill or recycling if they were repurposed. DaveWatcher is a home security app that uses machine learning to detect human and animal motion inside a home. It can be installed on any Android device with a camera. The app uses a Google Cloud machine learning library to distinguish between human and non-human motion.",
-    links: ["", "https://github.com/chrisvettese/DeltaHacks2020", "https://devpost.com/software/davewatcher"],
+    links: [[websites[1], "https://github.com/chrisvettese/DeltaHacks2020"], [websites[2], "https://devpost.com/software/davewatcher"]],
     images: [_i5.default, _i6.default, _i7.default],
     captions: ["The sign-in page.", "Each phone can either become a security camera, or control centre (user) that displays status information.", "Status of every camera in the user's network."],
     wideImage: false,
-    languages: [languages[0], languages[3]]
+    languages: [languages[0], languages[3], languages[4]]
   },
   bakeFromHome: {
     name: "Bake From Home",
     description: "This is a React website made for a user interface design course. It demonstrates the ability to search for baking recipes in various ways. Plugins used include Material UI and React Router.",
-    links: ["https://chrisvettese.github.io/seg3125-react-lab/", "https://github.com/chrisvettese/seg3125-react-lab", ""],
+    links: [[websites[0], "https://chrisvettese.github.io/seg3125-react-lab/"], [websites[1], "https://github.com/chrisvettese/seg3125-react-lab"]],
     images: [_i8.default, _i9.default, _i10.default, _i11.default],
     captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
     wideImage: true,
@@ -82271,7 +82281,7 @@ var projects = {
   }
 };
 exports.projects = projects;
-},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG","./images/java.png":"src/images/java.png","./images/javascript.png":"src/images/javascript.png","./images/react.png":"src/images/react.png","./images/android.png":"src/images/android.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./images/basil/i1.jpg":"src/images/basil/i1.jpg","./images/basil/i2.jpg":"src/images/basil/i2.jpg","./images/basil/i3.jpg":"src/images/basil/i3.jpg","./images/basil/i4.jpg":"src/images/basil/i4.jpg","./images/daveWatcher/i1.jpg":"src/images/daveWatcher/i1.jpg","./images/daveWatcher/i2.jpg":"src/images/daveWatcher/i2.jpg","./images/daveWatcher/i3.jpg":"src/images/daveWatcher/i3.jpg","./images/bakeFromHome/i1.PNG":"src/images/bakeFromHome/i1.PNG","./images/bakeFromHome/i2.PNG":"src/images/bakeFromHome/i2.PNG","./images/bakeFromHome/i3.PNG":"src/images/bakeFromHome/i3.PNG","./images/bakeFromHome/i4.PNG":"src/images/bakeFromHome/i4.PNG","./images/java.png":"src/images/java.png","./images/javascript.png":"src/images/javascript.png","./images/react.png":"src/images/react.png","./images/android.png":"src/images/android.png","./images/firebase.png":"src/images/firebase.png","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -84257,8 +84267,6 @@ var _linkedin = _interopRequireDefault(require("./images/linkedin.png"));
 
 var _email = _interopRequireDefault(require("./images/email.png"));
 
-var _styles = require("@material-ui/styles");
-
 var _react = _interopRequireDefault(require("react"));
 
 var _makeStyles = _interopRequireDefault(require("@material-ui/core/styles/makeStyles"));
@@ -84381,7 +84389,7 @@ function Profile() {
     className: classes.standardAdjust
   }, "chris.vettese2@gmail.com"))))));
 }
-},{"@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","./images/profile.png":"src/images/profile.png","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","react":"node_modules/react/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js"}],"src/App.js":[function(require,module,exports) {
+},{"@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","./images/profile.png":"src/images/profile.png","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","./images/github.png":"src/images/github.png","./images/linkedin.png":"src/images/linkedin.png","./images/email.png":"src/images/email.png","react":"node_modules/react/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -84404,10 +84412,6 @@ var _createMuiTheme = _interopRequireDefault(require("@material-ui/core/styles/c
 var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
 
 var _github = _interopRequireDefault(require("./images/github.png"));
-
-var _devpost = _interopRequireDefault(require("./images/devpost.png"));
-
-var _demo = _interopRequireDefault(require("./images/demo.png"));
 
 var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
 
@@ -84533,69 +84537,6 @@ function App() {
     states[projectKeys.indexOf(project)][1](_projects.projects[project].captions[captionIndex]);
   }
 
-  function DevpostLink(_ref) {
-    var project = _ref.project;
-
-    if (_projects.projects[project].links[2].length > 0) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[2]
-      }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _devpost.default,
-        className: classes.icon,
-        alt: "Devpost Icon"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[2],
-        className: classes.standardAdjust
-      }, "Devpost"));
-    }
-
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
-  }
-
-  function DemoLink(_ref2) {
-    var project = _ref2.project;
-
-    if (_projects.projects[project].links[0].length > 0) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[0]
-      }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _demo.default,
-        className: classes.icon,
-        alt: "Demo"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[0],
-        className: classes.standardAdjust
-      }, "Demo Project"));
-    }
-
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
-  }
-
-  function GithubLink(_ref3) {
-    var project = _ref3.project;
-
-    if (_projects.projects[project].links[1].length > 0) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[1]
-      }, /*#__PURE__*/_react.default.createElement("img", {
-        src: _github.default,
-        className: classes.icon,
-        alt: "Demo"
-      })), /*#__PURE__*/_react.default.createElement("a", {
-        target: "_blank",
-        href: _projects.projects[project].links[1],
-        className: classes.standardAdjust
-      }, "GitHub"));
-    }
-
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
-  }
-
   return /*#__PURE__*/_react.default.createElement(_styles.ThemeProvider, {
     theme: theme
   }, /*#__PURE__*/_react.default.createElement(_CssBaseline.default, null), /*#__PURE__*/_react.default.createElement(_Profile.default, null), /*#__PURE__*/_react.default.createElement(_core.Typography, {
@@ -84636,12 +84577,19 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       className: classes.projectSources
-    }, /*#__PURE__*/_react.default.createElement(DemoLink, {
-      project: project
-    }), /*#__PURE__*/_react.default.createElement(GithubLink, {
-      project: project
-    }), /*#__PURE__*/_react.default.createElement(DevpostLink, {
-      project: project
+    }, _projects.projects[project].links.map(function (link) {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: link[1]
+      }, /*#__PURE__*/_react.default.createElement("img", {
+        src: link[0][0],
+        className: classes.icon,
+        alt: "Demo"
+      })), /*#__PURE__*/_react.default.createElement("a", {
+        target: "_blank",
+        href: link[1],
+        className: classes.standardAdjust
+      }, link[0][1]));
     })))), /*#__PURE__*/_react.default.createElement(_Grid.default, {
       container: true,
       item: true,
@@ -84687,7 +84635,7 @@ function App() {
       container: true,
       className: classes.projectLanguages
     }, _projects.projects[project].languages.map(function (language) {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("img", {
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "\xA0\xA0\xA0\xA0\xA0", /*#__PURE__*/_react.default.createElement("img", {
         src: language[0],
         className: classes.icon,
         alt: "Demo"
@@ -84703,7 +84651,7 @@ function App() {
     align: "center"
   }, "Website made with React by Chris Vettese")));
 }
-},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/github.png":"src/images/github.png","./images/devpost.png":"src/images/devpost.png","./images/demo.png":"src/images/demo.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/github.png":"src/images/github.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
