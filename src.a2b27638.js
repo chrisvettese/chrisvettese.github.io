@@ -82163,9 +82163,7 @@ function makeStyles(stylesOrCreator) {
 
 var _default = makeStyles;
 exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","./defaultTheme":"node_modules/@material-ui/core/styles/defaultTheme.js"}],"src/images/github.png":[function(require,module,exports) {
-module.exports = "/github.c6a36f36.png";
-},{}],"src/images/basil/i1.jpg":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","./defaultTheme":"node_modules/@material-ui/core/styles/defaultTheme.js"}],"src/images/basil/i1.jpg":[function(require,module,exports) {
 module.exports = "/i1.7456282e.jpg";
 },{}],"src/images/basil/i2.jpg":[function(require,module,exports) {
 module.exports = "/i2.d436ffb5.jpg";
@@ -82197,6 +82195,8 @@ module.exports = "/react.9bc4a15d.png";
 module.exports = "/android.aef6b203.png";
 },{}],"src/images/firebase.png":[function(require,module,exports) {
 module.exports = "/firebase.24e097a2.png";
+},{}],"src/images/github.png":[function(require,module,exports) {
+module.exports = "/github.c6a36f36.png";
 },{}],"src/images/devpost.png":[function(require,module,exports) {
 module.exports = "/devpost.580aede0.png";
 },{}],"src/images/demo.png":[function(require,module,exports) {
@@ -84411,8 +84411,6 @@ var _createMuiTheme = _interopRequireDefault(require("@material-ui/core/styles/c
 
 var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
 
-var _github = _interopRequireDefault(require("./images/github.png"));
-
 var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
 
 var _projects = require("./projects");
@@ -84477,7 +84475,8 @@ var useStyles = (0, _makeStyles.default)(function () {
     projectDescription: {
       fontSize: "1.5em",
       width: "170%",
-      marginLeft: "2em"
+      marginLeft: "2em",
+      marginBottom: "2em"
     },
     projectSources: {
       marginLeft: "2em",
@@ -84651,7 +84650,7 @@ function App() {
     align: "center"
   }, "Website made with React by Chris Vettese")));
 }
-},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./images/github.png":"src/images/github.png","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","@material-ui/core/styles/makeStyles":"node_modules/@material-ui/core/styles/makeStyles.js","@material-ui/core/Grid":"node_modules/@material-ui/core/esm/Grid/index.js","@material-ui/styles":"node_modules/@material-ui/styles/esm/index.js","@material-ui/core/styles/createMuiTheme":"node_modules/@material-ui/core/styles/createMuiTheme.js","@material-ui/core/CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","@material-ui/core/AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./projects":"src/projects.js","react-responsive-carousel/lib/styles/carousel.min.css":"node_modules/react-responsive-carousel/lib/styles/carousel.min.css","react-responsive-carousel":"node_modules/react-responsive-carousel/lib/es/index.js","./Profile":"src/Profile.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
