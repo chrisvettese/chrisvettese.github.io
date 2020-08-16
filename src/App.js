@@ -182,7 +182,7 @@ export default function App() {
                                             <Carousel
                                                 className={projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow}
                                                 showThumbs={false}
-                                                showStatus={false}
+                                                showArrows={true}
                                                 onChange={index => changeCaption(project, index)}>
                                                 {
                                                     projects[project].images.map((image, index) => {
