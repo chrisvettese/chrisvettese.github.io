@@ -82322,7 +82322,7 @@ var projects = {
     links: [[websites[0], "https://github.com/chrisvettese/Mazescape"], [websites[1], "https://github.com/chrisvettese/Mazescape"]],
     images: ["https://www.youtube.com/embed/xHNZFTduW2w", _i17.default],
     captions: ["A video demonstration of the game.", "The player attacks an enemy."],
-    wideImage: "true",
+    wideImage: true,
     languages: [languages[0], languages[3], languages[5]]
   }
 };
