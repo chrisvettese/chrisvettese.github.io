@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {Fragment, useState} from "react";
 import {Typography} from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Grid from "@material-ui/core/Grid";
@@ -10,6 +10,7 @@ import {projects} from "./projects";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
 import Profile from "./Profile";
+import ReactPlayer from 'react-player';
 
 const useStyles = makeStyles(() => ({
     icon: {
@@ -20,8 +21,8 @@ const useStyles = makeStyles(() => ({
     },
     standardParagraph: {
         fontSize: "1.5em",
-        marginLeft: "2em",
-        marginRight: "2em",
+        marginLeft: "2.8em",
+        marginRight: "2.8em",
         marginBottom: "1em"
     },
     standardAdjust: {
@@ -114,9 +115,9 @@ export default function App() {
     const classes = useStyles();
     const projectKeys = Object.keys(projects);
 
-    const states = [];
-    projectKeys.forEach(project => {
-        states.push(useState(projects[project].captions[0]));
+    const states = new Array(projectKeys.length);
+    projectKeys.forEach((project, index) => {
+        states[index] = useState(projects[project].captions[0]);
     });
 
     function changeCaption(project, captionIndex) {
@@ -158,16 +159,17 @@ export default function App() {
                                     <Grid item xs={4}>
                                         <Grid container className={classes.projectSources}>
                                             {
-                                                projects[project].links.map(link => {
+                                                projects[project].links.map((link, index) => {
                                                     return (
-                                                        <>
+                                                        <Fragment key={index}>
                                                             <a target="_blank" href={link[1]}>
-                                                                <img src={link[0][0]} className={classes.icon} alt="Demo"/>
+                                                                <img src={link[0][0]} className={classes.icon}
+                                                                     alt="Demo"/>
                                                             </a>
                                                             <a target="_blank" href={link[1]}
                                                                className={classes.standardAdjust}>{link[0][1]}</a>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </>
+                                                        </Fragment>
                                                     )
                                                 })
                                             }
@@ -184,6 +186,10 @@ export default function App() {
                                                 onChange={index => changeCaption(project, index)}>
                                                 {
                                                     projects[project].images.map((image, index) => {
+                                                        if (image.includes("youtube")) {
+                                                            return <ReactPlayer width="100%" url={image}
+                                                                                key={projects[project].name + index}/>
+                                                        }
                                                         return <img
                                                             className={projects[project].wideImage ? classes.carouselImageWide : classes.carouselImageNarrow}
                                                             key={projects[project].name + index}
@@ -209,14 +215,14 @@ export default function App() {
                                     <Grid item xs={4}>
                                         <Grid container className={classes.projectLanguages}>
                                             {
-                                                projects[project].languages.map(language => {
+                                                projects[project].languages.map((language, index) => {
                                                     return (
-                                                        <>
+                                                        <Fragment key={index}>
                                                             <img src={language[0]} className={classes.icon} alt="Demo"/>
                                                             <Typography
                                                                 className={classes.standardAdjust}>{language[1]}</Typography>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </>
+                                                        </Fragment>
                                                     )
                                                 })
                                             }

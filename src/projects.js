@@ -14,6 +14,7 @@ import fortressAllianceI2 from "./images/fortressAlliance/i2.png";
 import fortressAllianceI3 from "./images/fortressAlliance/i3.png";
 import fortressAllianceI4 from "./images/fortressAlliance/i4.png";
 import fortressAllianceI5 from "./images/fortressAlliance/i5.png";
+import mazescapeI2 from "./images/mazescape/i2.png";
 
 import javaIcon from "./images/java.png";
 import javascriptIcon from "./images/javascript.png";
@@ -51,7 +52,7 @@ export const projects = {
     bakeFromHome: {
         name: "Bake From Home",
         description: "This is a React website made for a user interface design course. It demonstrates the ability to search for baking recipes in various ways. Plugins used include Material UI and React Router.",
-        links: [[websites[0], "https://chrisvettese.github.io/seg3125-react-lab/"], [websites[1], "https://github.com/chrisvettese/seg3125-react-lab"]],
+        links: [[websites[0], "https://chrisvettese.github.io/bake-from-home/"], [websites[1], "https://github.com/chrisvettese/bake-from-home"]],
         images: [bakeFromHomeI1, bakeFromHomeI2, bakeFromHomeI3, bakeFromHomeI4],
         captions: ["The home page of the website.", "The website allows various ways of searching for recipes.", "Example of a recipe on the website.", "Each recipe has a review section (visual, reviews are not saved)."],
         wideImage: true,
@@ -65,5 +66,14 @@ export const projects = {
         captions: ["A scene in the example map.", "The waiting screen.", "A fight between two players.", "When a player dies.", "Editing the map with the map maker."],
         wideImage: true,
         languages: [languages[0], languages[5]]
+    },
+    mazescape: {
+        name: "Mazescape",
+        description: "Mazescape is a cross-platform maze exploration game for desktop and Android. The player is placed in a randomly generated maze, and must complete a given mission. The game has enemies that use the A* pathfinding algorithm to track down the player.",
+        links: [[websites[0], "https://github.com/chrisvettese/Mazescape"], [websites[1], "https://github.com/chrisvettese/Mazescape"]],
+        images: ["https://www.youtube.com/embed/xHNZFTduW2w", mazescapeI2],
+        captions: ["A video demonstration of the game.", "The player attacks an enemy."],
+        wideImage: true,
+        languages: [languages[0], languages[3], languages[5]]
     }
 }
