@@ -89468,7 +89468,7 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_reactResponsiveCarousel.Carousel, {
       className: _projects.projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow,
       showThumbs: false,
-      showStatus: false,
+      showArrows: true,
       onChange: function onChange(index) {
         return changeCaption(project, index);
       }
@@ -89572,7 +89572,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64090" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61300" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
