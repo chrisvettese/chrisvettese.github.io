@@ -149,7 +149,7 @@ export default function App() {
             {
                 projectKeys.map(project => {
                     return (
-                        <div key={projects[project].name} className={classes.projectBox}>
+                        <div key={projects[project].name} className={classes.projectBox} id={project}>
                             <Grid container spacing={1}>
                                 <Grid container item xs={12} spacing={3}>
                                     <Grid item xs={4}>
@@ -161,7 +161,7 @@ export default function App() {
                                             {
                                                 projects[project].links.map((link, index) => {
                                                     return (
-                                                        <div key={index} id={project}>
+                                                        <Fragment key={index}>
                                                             <a target="_blank" href={link[1]}>
                                                                 <img src={link[0][0]} className={classes.icon}
                                                                      alt="Demo"/>
@@ -169,7 +169,7 @@ export default function App() {
                                                             <a target="_blank" href={link[1]}
                                                                className={classes.standardAdjust}>{link[0][1]}</a>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </div>
+                                                        </Fragment>
                                                     )
                                                 })
                                             }
@@ -182,7 +182,7 @@ export default function App() {
                                             <Carousel
                                                 className={projects[project].wideImage ? classes.carouselWide : classes.carouselNarrow}
                                                 showThumbs={false}
-                                                showStatus={false}
+                                                showArrows={true}
                                                 onChange={index => changeCaption(project, index)}>
                                                 {
                                                     projects[project].images.map((image, index) => {
