@@ -161,7 +161,7 @@ export default function App() {
                                             {
                                                 projects[project].links.map((link, index) => {
                                                     return (
-                                                        <Fragment key={index}>
+                                                        <div key={index} id={project}>
                                                             <a target="_blank" href={link[1]}>
                                                                 <img src={link[0][0]} className={classes.icon}
                                                                      alt="Demo"/>
@@ -169,7 +169,7 @@ export default function App() {
                                                             <a target="_blank" href={link[1]}
                                                                className={classes.standardAdjust}>{link[0][1]}</a>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </Fragment>
+                                                        </div>
                                                     )
                                                 })
                                             }
