@@ -89440,8 +89440,9 @@ function App() {
       container: true,
       className: classes.projectSources
     }, _projects.projects[project].links.map(function (link, index) {
-      return /*#__PURE__*/_react.default.createElement(_react.Fragment, {
-        key: index
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: index,
+        id: project
       }, /*#__PURE__*/_react.default.createElement("a", {
         target: "_blank",
         href: link[1]
@@ -89572,7 +89573,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61300" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58288" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
