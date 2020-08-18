@@ -70,7 +70,7 @@ export const projects = {
     mazescape: {
         name: "Mazescape",
         description: "Mazescape is a cross-platform maze exploration game for desktop and Android. The player is placed in a randomly generated maze, and must complete a given mission. The game has enemies that use the A* pathfinding algorithm to track down the player.",
-        links: [[websites[0], "https://github.com/chrisvettese/Mazescape"], [websites[1], "https://github.com/chrisvettese/Mazescape"]],
+        links: [[websites[0], "https://github.com/chrisvettese/Mazescape#setup"], [websites[1], "https://github.com/chrisvettese/Mazescape"]],
         images: ["https://www.youtube.com/embed/xHNZFTduW2w", mazescapeI2],
         captions: ["A video demonstration of the game.", "The player attacks an enemy."],
         wideImage: true,
