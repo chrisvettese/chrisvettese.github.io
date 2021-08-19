@@ -137,7 +137,7 @@ export default function App() {
                 </span>
             </Typography>
             <Typography className={classes.standardParagraph}>
-                I'm a 3rd software engineering student at University of Ottawa.
+                I'm a 3rd year software engineering student at University of Ottawa.
                 I've completed 4 co-op work terms as a software developer at Mitel, Thomson Reuters, and Nokia, and I'm currently on my 6th university semester.
                 I grew up in Toronto, and have been passionate about programming from a young age.
                 The goal of this website is to demonstrate some of my personal and university-related projects.
