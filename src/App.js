@@ -137,12 +137,11 @@ export default function App() {
                 </span>
             </Typography>
             <Typography className={classes.standardParagraph}>
-                I'm a software engineering student at University of Ottawa.
-                I've completed 4 semesters of courses, and am currently in my 3rd co-op work term.
-                I grew up in Toronto, and have been interested in programming for many years.
-                My first project was a simple Java game I made at the age of 12, and I've since developed programs in
-                Java, Python, JavaScript, and various frameworks.
-                The goal of this website is to demonstrate some of my projects.
+                I'm a 3rd software engineering student at University of Ottawa.
+                I've completed 4 co-op work terms as a software developer at Mitel, Thomson Reuters, and Nokia, and I'm currently on my 6th university semester.
+                I grew up in Toronto, and have been passionate about programming from a young age.
+                The goal of this website is to demonstrate some of my personal and university-related projects.
+                Feel free to reach out if you would like to know more about my experience.
             </Typography>
             <Typography align="center" variant="h3" className={classes.dividerText}>
                 <span className={classes.dividerSpan}>
